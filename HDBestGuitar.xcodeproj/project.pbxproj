@@ -12,7 +12,6 @@
 		045100AC1D2CACF3007B1E5F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045100AB1D2CACF3007B1E5F /* ViewController.m */; };
 		045100AF1D2CACF3007B1E5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045100AD1D2CACF3007B1E5F /* Main.storyboard */; };
 		045100B11D2CACF3007B1E5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045100B01D2CACF3007B1E5F /* Assets.xcassets */; };
-		045100B41D2CACF3007B1E5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045100B21D2CACF3007B1E5F /* LaunchScreen.storyboard */; };
 		045100C61D2CD65F007B1E5F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045100C41D2CD65F007B1E5F /* Crashlytics.framework */; };
 		045100C71D2CD65F007B1E5F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045100C51D2CD65F007B1E5F /* Fabric.framework */; };
 		045100CC1D2CD6B6007B1E5F /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045100CB1D2CD6B6007B1E5F /* CoreMIDI.framework */; };
@@ -50,7 +49,6 @@
 		045100AB1D2CACF3007B1E5F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		045100AE1D2CACF3007B1E5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		045100B01D2CACF3007B1E5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		045100B31D2CACF3007B1E5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		045100B51D2CACF3007B1E5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045100C41D2CD65F007B1E5F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		045100C51D2CD65F007B1E5F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 				045100AD1D2CACF3007B1E5F /* Main.storyboard */,
 				045100B01D2CACF3007B1E5F /* Assets.xcassets */,
 				045101AE1D2CE9FD007B1E5F /* HDImages.xcassets */,
-				045100B21D2CACF3007B1E5F /* LaunchScreen.storyboard */,
 				045100B51D2CACF3007B1E5F /* Info.plist */,
 				045100A51D2CACF2007B1E5F /* main.m */,
 			);
@@ -253,7 +250,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				045100B41D2CACF3007B1E5F /* LaunchScreen.storyboard in Resources */,
 				045101AF1D2CE9FD007B1E5F /* HDImages.xcassets in Resources */,
 				045100B11D2CACF3007B1E5F /* Assets.xcassets in Resources */,
 				045100AF1D2CACF3007B1E5F /* Main.storyboard in Resources */,
@@ -371,14 +367,6 @@
 				045100AE1D2CACF3007B1E5F /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		045100B21D2CACF3007B1E5F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				045100B31D2CACF3007B1E5F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
