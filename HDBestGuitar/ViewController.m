@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "HDImageAssist.h"
+#import "UIDevice+HDCategory.h"
 
 @interface ViewController ()
 
@@ -16,7 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    UIImageView *iv = [[UIImageView alloc] initWithFrame:self.view.frame];
+    iv.image = [HDImageAssist getWholeImageWithName:@"bg_chordsmode_" ofType:@"jpg"];
+    [self.view addSubview:iv];
 }
 
 - (void)didReceiveMemoryWarning {
