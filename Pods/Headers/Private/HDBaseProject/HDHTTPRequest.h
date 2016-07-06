@@ -1,0 +1,1 @@
+../../../HDBaseProject/Pod/Classes/HDHTTPManager/HDHTTPRequest.h

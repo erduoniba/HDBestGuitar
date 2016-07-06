@@ -1,0 +1,15 @@
+#!/bin/bash
+
+LIB_DIR=$(dirname "$0")
+ROLLOUT_DIR=$(dirname "$LIB_DIR")
+
+cat << end_of_error_msg
+Rollout.io SDK version was not reconfigured, aborting...
+Our guess is that you changed Rollout.io version in your podfile, but have not reconfigured it yet.
+If this is correct, please run the following command:
+    "$ROLLOUT_DIR"/install/configure_pod.sh -k $app_key
+
+If our guess is incorrect or if the above didn't help, please contact us at support@rollout.io
+end_of_error_msg
+
+exit 3
