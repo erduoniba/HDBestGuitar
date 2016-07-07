@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0400D87D1D2DF40E00479A9D /* cord1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0400D8771D2DF40E00479A9D /* cord1@2x.png */; };
+		0400D87E1D2DF40E00479A9D /* cord2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0400D8781D2DF40E00479A9D /* cord2@2x.png */; };
+		0400D87F1D2DF40E00479A9D /* cord3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0400D8791D2DF40E00479A9D /* cord3@2x.png */; };
+		0400D8801D2DF40E00479A9D /* cord4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0400D87A1D2DF40E00479A9D /* cord4@2x.png */; };
+		0400D8811D2DF40E00479A9D /* cord5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0400D87B1D2DF40E00479A9D /* cord5@2x.png */; };
+		0400D8821D2DF40E00479A9D /* cord6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0400D87C1D2DF40E00479A9D /* cord6@2x.png */; };
+		0400D8851D2E398F00479A9D /* HDAnimationAssist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0400D8841D2E398F00479A9D /* HDAnimationAssist.m */; };
+		0400D88E1D2E3F7D00479A9D /* HDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0400D88D1D2E3F7D00479A9D /* HDMainViewController.m */; };
+		0400D8921D2E41E600479A9D /* HDGuitarCordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0400D8911D2E41E600479A9D /* HDGuitarCordView.m */; };
 		045100A61D2CACF2007B1E5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 045100A51D2CACF2007B1E5F /* main.m */; };
 		045100A91D2CACF2007B1E5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 045100A81D2CACF2007B1E5F /* AppDelegate.m */; };
-		045100AC1D2CACF3007B1E5F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045100AB1D2CACF3007B1E5F /* ViewController.m */; };
-		045100AF1D2CACF3007B1E5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045100AD1D2CACF3007B1E5F /* Main.storyboard */; };
 		045100B11D2CACF3007B1E5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045100B01D2CACF3007B1E5F /* Assets.xcassets */; };
 		045100C61D2CD65F007B1E5F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045100C41D2CD65F007B1E5F /* Crashlytics.framework */; };
 		045100C71D2CD65F007B1E5F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045100C51D2CD65F007B1E5F /* Fabric.framework */; };
@@ -54,13 +61,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0400D8771D2DF40E00479A9D /* cord1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cord1@2x.png"; sourceTree = "<group>"; };
+		0400D8781D2DF40E00479A9D /* cord2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cord2@2x.png"; sourceTree = "<group>"; };
+		0400D8791D2DF40E00479A9D /* cord3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cord3@2x.png"; sourceTree = "<group>"; };
+		0400D87A1D2DF40E00479A9D /* cord4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cord4@2x.png"; sourceTree = "<group>"; };
+		0400D87B1D2DF40E00479A9D /* cord5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cord5@2x.png"; sourceTree = "<group>"; };
+		0400D87C1D2DF40E00479A9D /* cord6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cord6@2x.png"; sourceTree = "<group>"; };
+		0400D8831D2E398F00479A9D /* HDAnimationAssist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDAnimationAssist.h; sourceTree = "<group>"; };
+		0400D8841D2E398F00479A9D /* HDAnimationAssist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDAnimationAssist.m; sourceTree = "<group>"; };
+		0400D8861D2E3C8E00479A9D /* HDBestGuitar.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDBestGuitar.pch; sourceTree = "<group>"; };
+		0400D88C1D2E3F7D00479A9D /* HDMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDMainViewController.h; sourceTree = "<group>"; };
+		0400D88D1D2E3F7D00479A9D /* HDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDMainViewController.m; sourceTree = "<group>"; };
+		0400D8901D2E41E600479A9D /* HDGuitarCordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDGuitarCordView.h; sourceTree = "<group>"; };
+		0400D8911D2E41E600479A9D /* HDGuitarCordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDGuitarCordView.m; sourceTree = "<group>"; };
 		045100A11D2CACF2007B1E5F /* HDBestGuitar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDBestGuitar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045100A51D2CACF2007B1E5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		045100A71D2CACF2007B1E5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		045100A81D2CACF2007B1E5F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		045100AA1D2CACF2007B1E5F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		045100AB1D2CACF3007B1E5F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		045100AE1D2CACF3007B1E5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		045100B01D2CACF3007B1E5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		045100B51D2CACF3007B1E5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045100C41D2CD65F007B1E5F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -123,6 +140,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		0400D8871D2E3DFF00479A9D /* HDViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0400D88B1D2E3F6D00479A9D /* HDMainVC */,
+			);
+			path = HDViewControllers;
+			sourceTree = "<group>";
+		};
+		0400D88B1D2E3F6D00479A9D /* HDMainVC */ = {
+			isa = PBXGroup;
+			children = (
+				0400D88C1D2E3F7D00479A9D /* HDMainViewController.h */,
+				0400D88D1D2E3F7D00479A9D /* HDMainViewController.m */,
+				0400D88F1D2E3F9700479A9D /* HDMainView */,
+			);
+			path = HDMainVC;
+			sourceTree = "<group>";
+		};
+		0400D88F1D2E3F9700479A9D /* HDMainView */ = {
+			isa = PBXGroup;
+			children = (
+				0400D8901D2E41E600479A9D /* HDGuitarCordView.h */,
+				0400D8911D2E41E600479A9D /* HDGuitarCordView.m */,
+			);
+			path = HDMainView;
+			sourceTree = "<group>";
+		};
 		045100981D2CACF2007B1E5F = {
 			isa = PBXGroup;
 			children = (
@@ -147,8 +191,7 @@
 			children = (
 				045100A71D2CACF2007B1E5F /* AppDelegate.h */,
 				045100A81D2CACF2007B1E5F /* AppDelegate.m */,
-				045100AA1D2CACF2007B1E5F /* ViewController.h */,
-				045100AB1D2CACF3007B1E5F /* ViewController.m */,
+				0400D8871D2E3DFF00479A9D /* HDViewControllers */,
 				D96BEFB71D2D4938008B74F8 /* HDAssist */,
 				045100BE1D2CB4B7007B1E5F /* ThridPartLib */,
 				045100A41D2CACF2007B1E5F /* Supporting Files */,
@@ -159,7 +202,7 @@
 		045100A41D2CACF2007B1E5F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				045100AD1D2CACF3007B1E5F /* Main.storyboard */,
+				0400D8861D2E3C8E00479A9D /* HDBestGuitar.pch */,
 				045100B01D2CACF3007B1E5F /* Assets.xcassets */,
 				045100B51D2CACF3007B1E5F /* Info.plist */,
 				045100A51D2CACF2007B1E5F /* main.m */,
@@ -208,6 +251,8 @@
 			children = (
 				D96BEFB81D2D495F008B74F8 /* HDImageAssist.h */,
 				D96BEFB91D2D495F008B74F8 /* HDImageAssist.m */,
+				0400D8831D2E398F00479A9D /* HDAnimationAssist.h */,
+				0400D8841D2E398F00479A9D /* HDAnimationAssist.m */,
 			);
 			path = HDAssist;
 			sourceTree = "<group>";
@@ -227,6 +272,12 @@
 				D96BEFCE1D2D4D95008B74F8 /* bg_solo_left_P4@2x.jpg */,
 				D96BEFCF1D2D4D95008B74F8 /* bg_solo_left_P6@2x.jpg */,
 				D96BEFD01D2D4D95008B74F8 /* bg_solo_left_P6P@3x.jpg */,
+				0400D8771D2DF40E00479A9D /* cord1@2x.png */,
+				0400D8781D2DF40E00479A9D /* cord2@2x.png */,
+				0400D8791D2DF40E00479A9D /* cord3@2x.png */,
+				0400D87A1D2DF40E00479A9D /* cord4@2x.png */,
+				0400D87B1D2DF40E00479A9D /* cord5@2x.png */,
+				0400D87C1D2DF40E00479A9D /* cord6@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -320,15 +371,20 @@
 				D96BEFD21D2D4D95008B74F8 /* bg_solo_left_P6@2x.jpg in Resources */,
 				D96BEFD31D2D4D95008B74F8 /* bg_solo_left_P6P@3x.jpg in Resources */,
 				045100B11D2CACF3007B1E5F /* Assets.xcassets in Resources */,
+				0400D8811D2DF40E00479A9D /* cord5@2x.png in Resources */,
+				0400D87E1D2DF40E00479A9D /* cord2@2x.png in Resources */,
+				0400D87D1D2DF40E00479A9D /* cord1@2x.png in Resources */,
+				0400D8801D2DF40E00479A9D /* cord4@2x.png in Resources */,
 				D96BEFC71D2D4D47008B74F8 /* bg_chordsmode_black_P6P@3x.jpg in Resources */,
 				D96BEFBF1D2D4C31008B74F8 /* bg_chordsmode_P6@2x.jpg in Resources */,
 				D96BEFC11D2D4C4D008B74F8 /* bg_chordsmode_P6P@3x.jpg in Resources */,
 				D96BEFC51D2D4D47008B74F8 /* bg_chordsmode_black_P4@2x.jpg in Resources */,
+				0400D8821D2DF40E00479A9D /* cord6@2x.png in Resources */,
 				D96BEFD11D2D4D95008B74F8 /* bg_solo_left_P4@2x.jpg in Resources */,
 				D96BEFCC1D2D4D73008B74F8 /* bg_solo_first_black_P6@2x.jpg in Resources */,
 				D96BEFCB1D2D4D73008B74F8 /* bg_solo_first_black_P4@2x.jpg in Resources */,
 				D96BEFCD1D2D4D73008B74F8 /* bg_solo_first_black_P6P@3x.jpg in Resources */,
-				045100AF1D2CACF3007B1E5F /* Main.storyboard in Resources */,
+				0400D87F1D2DF40E00479A9D /* cord3@2x.png in Resources */,
 				D96BEFBD1D2D4BEF008B74F8 /* bg_chordsmode_P4@2x.jpg in Resources */,
 				D96BEFC61D2D4D47008B74F8 /* bg_chordsmode_black_P6@2x.jpg in Resources */,
 			);
@@ -430,26 +486,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0400D8921D2E41E600479A9D /* HDGuitarCordView.m in Sources */,
 				D96BEFD71D2D5105008B74F8 /* UIDevice+HDCategory.m in Sources */,
 				D96BEFBA1D2D495F008B74F8 /* HDImageAssist.m in Sources */,
-				045100AC1D2CACF3007B1E5F /* ViewController.m in Sources */,
 				045100A91D2CACF2007B1E5F /* AppDelegate.m in Sources */,
 				045100A61D2CACF2007B1E5F /* main.m in Sources */,
+				0400D8851D2E398F00479A9D /* HDAnimationAssist.m in Sources */,
+				0400D88E1D2E3F7D00479A9D /* HDMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		045100AD1D2CACF3007B1E5F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				045100AE1D2CACF3007B1E5F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		045100B61D2CACF3007B1E5F /* Debug */ = {
@@ -547,6 +594,8 @@
 					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib/Fabric",
 					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib/MIKMIDI",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HDBestGuitar/HDBestGuitar.pch;
 				INFOPLIST_FILE = HDBestGuitar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -568,6 +617,8 @@
 					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib/Fabric",
 					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib/MIKMIDI",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HDBestGuitar/HDBestGuitar.pch;
 				INFOPLIST_FILE = HDBestGuitar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
