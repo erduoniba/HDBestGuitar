@@ -18,6 +18,8 @@
 
 PROPERTY_STRONG UIImageView *bgView;
 
+PROPERTY_STRONG UIImageView *imageView;
+
 @end
 
 @implementation HDMainViewController
@@ -31,7 +33,20 @@ PROPERTY_STRONG UIImageView *bgView;
     
     HDGuitarCordView *vvv = [[HDGuitarCordView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:vvv];
+    
+    
+//    
+//    UIImage *obj = [UIImage imageNamed:STRING_FROMAT(@"cord%d", 6)];
+//    UIImage *image = [obj resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile];
+//    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frameSizeWidth, obj.size.height)];
+//    _imageView.image = image;
+//    [self.view addSubview:_imageView];
+//    [_imageView centerAlignVerticalForSuperView];
+//    
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnImageView:)];
+//    [self.view addGestureRecognizer:tap];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
