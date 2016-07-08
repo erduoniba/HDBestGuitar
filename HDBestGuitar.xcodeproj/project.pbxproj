@@ -16,6 +16,7 @@
 		0400D8851D2E398F00479A9D /* HDAnimationAssist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0400D8841D2E398F00479A9D /* HDAnimationAssist.m */; };
 		0400D88E1D2E3F7D00479A9D /* HDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0400D88D1D2E3F7D00479A9D /* HDMainViewController.m */; };
 		0400D8921D2E41E600479A9D /* HDGuitarCordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0400D8911D2E41E600479A9D /* HDGuitarCordView.m */; };
+		04334A4E1D2F58E30002FBEF /* GeneralUser GS MuseScore v1.442.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 04334A4D1D2F58E30002FBEF /* GeneralUser GS MuseScore v1.442.sf2 */; };
 		045100A61D2CACF2007B1E5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 045100A51D2CACF2007B1E5F /* main.m */; };
 		045100A91D2CACF2007B1E5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 045100A81D2CACF2007B1E5F /* AppDelegate.m */; };
 		045100B11D2CACF3007B1E5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045100B01D2CACF3007B1E5F /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		0400D88D1D2E3F7D00479A9D /* HDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDMainViewController.m; sourceTree = "<group>"; };
 		0400D8901D2E41E600479A9D /* HDGuitarCordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDGuitarCordView.h; sourceTree = "<group>"; };
 		0400D8911D2E41E600479A9D /* HDGuitarCordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDGuitarCordView.m; sourceTree = "<group>"; };
+		04334A4D1D2F58E30002FBEF /* GeneralUser GS MuseScore v1.442.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeneralUser GS MuseScore v1.442.sf2"; sourceTree = "<group>"; };
 		045100A11D2CACF2007B1E5F /* HDBestGuitar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDBestGuitar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045100A51D2CACF2007B1E5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		045100A71D2CACF2007B1E5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		045100C81D2CD672007B1E5F /* MIKMIDI */ = {
 			isa = PBXGroup;
 			children = (
+				04334A4D1D2F58E30002FBEF /* GeneralUser GS MuseScore v1.442.sf2 */,
 				045101A61D2CDBC5007B1E5F /* MIKMIDI.framework */,
 			);
 			path = MIKMIDI;
@@ -376,6 +379,7 @@
 				0400D87D1D2DF40E00479A9D /* cord1@2x.png in Resources */,
 				0400D8801D2DF40E00479A9D /* cord4@2x.png in Resources */,
 				D96BEFC71D2D4D47008B74F8 /* bg_chordsmode_black_P6P@3x.jpg in Resources */,
+				04334A4E1D2F58E30002FBEF /* GeneralUser GS MuseScore v1.442.sf2 in Resources */,
 				D96BEFBF1D2D4C31008B74F8 /* bg_chordsmode_P6@2x.jpg in Resources */,
 				D96BEFC11D2D4C4D008B74F8 /* bg_chordsmode_P6P@3x.jpg in Resources */,
 				D96BEFC51D2D4D47008B74F8 /* bg_chordsmode_black_P4@2x.jpg in Resources */,

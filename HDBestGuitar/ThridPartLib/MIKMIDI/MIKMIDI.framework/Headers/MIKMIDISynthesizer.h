@@ -82,7 +82,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *	@return YES if loading the sound font file was succesful, NO if an error occurred.
  */
-- (BOOL)loadSoundfontFromFileAtURL:(NSURL *)fileURL error:(NSError **)error;
+- (BOOL)loadSoundfontFromFileAtURL:(NSURL *)fileURL presetID:(NSInteger)presetID error:(NSError **)error;
 
 + (AudioComponentDescription)appleSynthComponentDescription;
 
