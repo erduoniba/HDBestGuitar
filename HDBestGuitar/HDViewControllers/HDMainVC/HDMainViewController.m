@@ -17,8 +17,9 @@
 #import <MIKMIDI/MIKMIDISynthesizer.h>
 #import <MIKMIDI/MIKMIDINoteOnCommand.h>
 #import <MIKMIDI/MIKMIDINoteOffCommand.h>
+#import "HDGuitarRhythmView.h"
 
-@interface HDMainViewController ()
+@interface HDMainViewController () <HDGuitarRhythmViewDelegate>
 
 PROPERTY_STRONG UIImageView *bgView;
 
@@ -30,6 +31,10 @@ PROPERTY_STRONG UIImageView *imageView;
 
 @implementation HDMainViewController
 
+- (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView atIndex:(NSInteger)index{
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -39,6 +44,9 @@ PROPERTY_STRONG UIImageView *imageView;
     
     HDGuitarCordView *vvv = [[HDGuitarCordView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:vvv];
+    
+    HDGuitarRhythmView *rhythmView = [[HDGuitarRhythmView alloc] initWithFrame:CGRectMake(10, 0, 81, self.view.frameSizeHeight)];
+    [self.view addSubview:rhythmView];
     
     
 //    

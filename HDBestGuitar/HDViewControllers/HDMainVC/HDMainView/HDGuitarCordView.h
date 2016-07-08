@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  六线谱界面
+ */
 @interface HDGuitarCordView : UIView
 
 @end

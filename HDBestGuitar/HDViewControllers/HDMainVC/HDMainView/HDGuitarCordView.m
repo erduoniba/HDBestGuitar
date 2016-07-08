@@ -12,7 +12,6 @@
 @implementation HDGuitarCordView{
     CGFloat distance;
     CGFloat edgeDistance;
-    
 }
 
 - (CGFloat )getWidthWithP6Witdh:(CGFloat)width{
