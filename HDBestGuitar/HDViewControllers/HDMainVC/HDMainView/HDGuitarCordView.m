@@ -75,7 +75,7 @@
         [HDAnimationAssist combinAnimationInView:cordLine amplitude:2];
         
         if (_delegate && [_delegate respondsToSelector:@selector(hdGuitarCordView:atIndex:)]) {
-            [_delegate hdGuitarCordView:self atIndex:index];
+            [_delegate hdGuitarCordView:self atIndex:5-index];
         }
     }
 }

@@ -8,25 +8,21 @@
 
 #import "HDMainViewController.h"
 
-#pragma mark - assist
+#pragma mark - assists
 #import "HDImageAssist.h"
 #import "UIDevice+HDCategory.h"
 #import "HDAnimationAssist.h"
-#import "HDGuitarCordView.h"
+#import "HDMidiPlayAssist.h"
 
-#import <MIKMIDI/MIKMIDISynthesizer.h>
-#import <MIKMIDI/MIKMIDINoteOnCommand.h>
-#import <MIKMIDI/MIKMIDINoteOffCommand.h>
+#pragma mark - views
+#import "HDGuitarCordView.h"
 #import "HDGuitarRhythmView.h"
 
 
 @interface HDMainViewController () <HDGuitarCordViewDelegate>
 
-
 PROPERTY_STRONG UIImageView *bgView;
 PROPERTY_STRONG HDGuitarCordView *guitarCordView;
-
-@property (nonatomic, strong) MIKMIDISynthesizer *synthesizer;
 
 @end
 
@@ -49,6 +45,7 @@ PROPERTY_STRONG HDGuitarCordView *guitarCordView;
     [self.view addSubview:_guitarCordView];
     
     HDGuitarRhythmView *rhythmView = [[HDGuitarRhythmView alloc] initWithFrame:CGRectMake(10, 0, 81, self.view.frameSizeHeight)];
+    rhythmView.delegate = self;
     [self.view addSubview:rhythmView];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hhhhhh)];
@@ -58,34 +55,12 @@ PROPERTY_STRONG HDGuitarCordView *guitarCordView;
 
 #pragma mark - HDGuitarCordViewDelegate 
 - (void)hdGuitarCordView:(HDGuitarCordView *)guitarCordView atIndex:(NSInteger)index{
-
+    NSArray *arr = [HDMidiPlayAssist getGuitarNotes];
+    [HDMidiPlayAssist playMidiNote:[arr[index][0] unsignedIntegerValue]];
 }
 
 - (void)hhhhhh{
-    int choiceNote = random() % 16 + 50;
-    NSLog(@"choiceNote : %d", choiceNote);
-    UInt8 note = choiceNote;
-    MIKMIDINoteOnCommand *noteOn = [MIKMIDINoteOnCommand noteOnCommandWithNote:note velocity:127 channel:0 timestamp:[NSDate date]];
-    [self.synthesizer handleMIDIMessages:@[noteOn]];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        MIKMIDINoteOffCommand *noteOff = [MIKMIDINoteOffCommand noteOffCommandWithNote:note velocity:127 channel:0 timestamp:[NSDate date]];
-        [self.synthesizer handleMIDIMessages:@[noteOff]];
-    });
-}
 
-
-- (MIKMIDISynthesizer *)synthesizer
-{
-    if (!_synthesizer) {
-        _synthesizer = [[MIKMIDISynthesizer alloc] init];
-        NSURL *soundfont = [[NSBundle mainBundle] URLForResource:@"GeneralUser GS MuseScore v1.442" withExtension:@"sf2"];
-        NSError *error = nil;
-        if (![_synthesizer loadSoundfontFromFileAtURL:soundfont presetID:27 error:&error]) {
-            NSLog(@"Error loading soundfont for synthesizer. Sound will be degraded. %@", error);
-        }
-    }
-    return _synthesizer;
 }
 
 

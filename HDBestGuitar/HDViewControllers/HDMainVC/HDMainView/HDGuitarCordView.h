@@ -17,7 +17,7 @@
  *  吉他六弦界面，点击的第几根弦
  *
  *  @param guitarCordView 吉他六弦界面
- *  @param index          第几根弦
+ *  @param index          第几根弦 0-5: 第一到第六弦
  */
 - (void)hdGuitarCordView:(HDGuitarCordView *)guitarCordView atIndex:(NSInteger)index;
 
