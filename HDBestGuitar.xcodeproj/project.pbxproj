@@ -16,6 +16,12 @@
 		0400D8851D2E398F00479A9D /* HDAnimationAssist.m in Sources */ = {isa = PBXBuildFile; fileRef = 0400D8841D2E398F00479A9D /* HDAnimationAssist.m */; };
 		0400D88E1D2E3F7D00479A9D /* HDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0400D88D1D2E3F7D00479A9D /* HDMainViewController.m */; };
 		0400D8921D2E41E600479A9D /* HDGuitarCordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0400D8911D2E41E600479A9D /* HDGuitarCordView.m */; };
+		04334A4E1D2F58E30002FBEF /* GeneralUser GS MuseScore v1.442.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 04334A4D1D2F58E30002FBEF /* GeneralUser GS MuseScore v1.442.sf2 */; };
+		04334A561D2F7A7C0002FBEF /* buts_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04334A531D2F7A7C0002FBEF /* buts_icon@2x.png */; };
+		04334A571D2F7A7C0002FBEF /* buts_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04334A541D2F7A7C0002FBEF /* buts_press@2x.png */; };
+		04334A581D2F7A7C0002FBEF /* buts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04334A551D2F7A7C0002FBEF /* buts@2x.png */; };
+		04334A5B1D2F7C170002FBEF /* HDGuitarRhythmView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04334A5A1D2F7C170002FBEF /* HDGuitarRhythmView.m */; };
+		04334A5D1D2FADD90002FBEF /* btn_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04334A5C1D2FADD90002FBEF /* btn_setting@2x.png */; };
 		045100A61D2CACF2007B1E5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 045100A51D2CACF2007B1E5F /* main.m */; };
 		045100A91D2CACF2007B1E5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 045100A81D2CACF2007B1E5F /* AppDelegate.m */; };
 		045100B11D2CACF3007B1E5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045100B01D2CACF3007B1E5F /* Assets.xcassets */; };
@@ -74,6 +80,13 @@
 		0400D88D1D2E3F7D00479A9D /* HDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDMainViewController.m; sourceTree = "<group>"; };
 		0400D8901D2E41E600479A9D /* HDGuitarCordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDGuitarCordView.h; sourceTree = "<group>"; };
 		0400D8911D2E41E600479A9D /* HDGuitarCordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDGuitarCordView.m; sourceTree = "<group>"; };
+		04334A4D1D2F58E30002FBEF /* GeneralUser GS MuseScore v1.442.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeneralUser GS MuseScore v1.442.sf2"; sourceTree = "<group>"; };
+		04334A531D2F7A7C0002FBEF /* buts_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buts_icon@2x.png"; sourceTree = "<group>"; };
+		04334A541D2F7A7C0002FBEF /* buts_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buts_press@2x.png"; sourceTree = "<group>"; };
+		04334A551D2F7A7C0002FBEF /* buts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buts@2x.png"; sourceTree = "<group>"; };
+		04334A591D2F7C170002FBEF /* HDGuitarRhythmView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDGuitarRhythmView.h; sourceTree = "<group>"; };
+		04334A5A1D2F7C170002FBEF /* HDGuitarRhythmView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDGuitarRhythmView.m; sourceTree = "<group>"; };
+		04334A5C1D2FADD90002FBEF /* btn_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_setting@2x.png"; sourceTree = "<group>"; };
 		045100A11D2CACF2007B1E5F /* HDBestGuitar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDBestGuitar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045100A51D2CACF2007B1E5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		045100A71D2CACF2007B1E5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -163,6 +176,8 @@
 			children = (
 				0400D8901D2E41E600479A9D /* HDGuitarCordView.h */,
 				0400D8911D2E41E600479A9D /* HDGuitarCordView.m */,
+				04334A591D2F7C170002FBEF /* HDGuitarRhythmView.h */,
+				04334A5A1D2F7C170002FBEF /* HDGuitarRhythmView.m */,
 			);
 			path = HDMainView;
 			sourceTree = "<group>";
@@ -233,6 +248,7 @@
 		045100C81D2CD672007B1E5F /* MIKMIDI */ = {
 			isa = PBXGroup;
 			children = (
+				04334A4D1D2F58E30002FBEF /* GeneralUser GS MuseScore v1.442.sf2 */,
 				045101A61D2CDBC5007B1E5F /* MIKMIDI.framework */,
 			);
 			path = MIKMIDI;
@@ -278,6 +294,10 @@
 				0400D87A1D2DF40E00479A9D /* cord4@2x.png */,
 				0400D87B1D2DF40E00479A9D /* cord5@2x.png */,
 				0400D87C1D2DF40E00479A9D /* cord6@2x.png */,
+				04334A531D2F7A7C0002FBEF /* buts_icon@2x.png */,
+				04334A541D2F7A7C0002FBEF /* buts_press@2x.png */,
+				04334A5C1D2FADD90002FBEF /* btn_setting@2x.png */,
+				04334A551D2F7A7C0002FBEF /* buts@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -368,14 +388,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04334A5D1D2FADD90002FBEF /* btn_setting@2x.png in Resources */,
 				D96BEFD21D2D4D95008B74F8 /* bg_solo_left_P6@2x.jpg in Resources */,
 				D96BEFD31D2D4D95008B74F8 /* bg_solo_left_P6P@3x.jpg in Resources */,
 				045100B11D2CACF3007B1E5F /* Assets.xcassets in Resources */,
 				0400D8811D2DF40E00479A9D /* cord5@2x.png in Resources */,
+				04334A571D2F7A7C0002FBEF /* buts_press@2x.png in Resources */,
+				04334A581D2F7A7C0002FBEF /* buts@2x.png in Resources */,
 				0400D87E1D2DF40E00479A9D /* cord2@2x.png in Resources */,
 				0400D87D1D2DF40E00479A9D /* cord1@2x.png in Resources */,
 				0400D8801D2DF40E00479A9D /* cord4@2x.png in Resources */,
 				D96BEFC71D2D4D47008B74F8 /* bg_chordsmode_black_P6P@3x.jpg in Resources */,
+				04334A4E1D2F58E30002FBEF /* GeneralUser GS MuseScore v1.442.sf2 in Resources */,
 				D96BEFBF1D2D4C31008B74F8 /* bg_chordsmode_P6@2x.jpg in Resources */,
 				D96BEFC11D2D4C4D008B74F8 /* bg_chordsmode_P6P@3x.jpg in Resources */,
 				D96BEFC51D2D4D47008B74F8 /* bg_chordsmode_black_P4@2x.jpg in Resources */,
@@ -383,6 +407,7 @@
 				D96BEFD11D2D4D95008B74F8 /* bg_solo_left_P4@2x.jpg in Resources */,
 				D96BEFCC1D2D4D73008B74F8 /* bg_solo_first_black_P6@2x.jpg in Resources */,
 				D96BEFCB1D2D4D73008B74F8 /* bg_solo_first_black_P4@2x.jpg in Resources */,
+				04334A561D2F7A7C0002FBEF /* buts_icon@2x.png in Resources */,
 				D96BEFCD1D2D4D73008B74F8 /* bg_solo_first_black_P6P@3x.jpg in Resources */,
 				0400D87F1D2DF40E00479A9D /* cord3@2x.png in Resources */,
 				D96BEFBD1D2D4BEF008B74F8 /* bg_chordsmode_P4@2x.jpg in Resources */,
@@ -492,6 +517,7 @@
 				045100A91D2CACF2007B1E5F /* AppDelegate.m in Sources */,
 				045100A61D2CACF2007B1E5F /* main.m in Sources */,
 				0400D8851D2E398F00479A9D /* HDAnimationAssist.m in Sources */,
+				04334A5B1D2F7C170002FBEF /* HDGuitarRhythmView.m in Sources */,
 				0400D88E1D2E3F7D00479A9D /* HDMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

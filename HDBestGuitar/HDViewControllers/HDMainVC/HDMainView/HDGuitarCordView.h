@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class HDGuitarCordView;
 
 @protocol HDGuitarCordViewDelegate <NSObject>
@@ -22,6 +23,10 @@
 
 @end
 
+
+/**
+ *  六线谱界面
+ */
 @interface HDGuitarCordView : UIView
 
 @property (nonatomic, assign) id <HDGuitarCordViewDelegate> delegate;
