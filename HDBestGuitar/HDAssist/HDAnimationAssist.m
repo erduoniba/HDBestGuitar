@@ -62,4 +62,40 @@
     }];
 }
 
+/**
+ *  组合动画，实现类似 吉他扫弦的动画
+ *
+ *  @param view
+ *  @param originY view的originY
+ */
++ (void)combinAnimationInView:(UIView *)view amplitude:(CGFloat)amplitude{
+    //获取到当前View的layer
+    CALayer *viewLayer = view.layer;
+    CGPoint position = viewLayer.position;
+    
+    //设置动画
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position.y"];
+    //设置运动形式
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
+    
+    NSMutableArray *animations = [NSMutableArray array];
+    int total = 20;
+    for (int i=0; i<total; i++) {
+        amplitude -= (amplitude / total);
+        if (i % 2 == 0) {
+            [animations addObject:@(position.y + amplitude)];
+        }
+        else {
+            [animations addObject:@(position.y - amplitude)];
+        }
+    }
+    
+    animation.values = animations;
+    animation.duration = 0.45;
+    
+    //添加上动画
+    [viewLayer addAnimation:animation forKey:nil];
+}
+
+
 @end

@@ -17,4 +17,12 @@
  */
 + (void)springAnimationInView:(UIView *)view;
 
+/**
+ *  组合动画，实现类似 吉他扫弦的动画
+ *
+ *  @param view
+ *  @param amplitude 动画的振幅
+ */
++ (void)combinAnimationInView:(UIView *)view amplitude:(CGFloat)amplitude;
+
 @end

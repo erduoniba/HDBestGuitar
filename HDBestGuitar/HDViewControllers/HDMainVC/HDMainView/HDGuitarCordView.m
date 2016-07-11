@@ -66,7 +66,6 @@
 
 - (void)parseTouches:(NSSet<UITouch *> *)touches{
     UITouch *touch = [touches.allObjects firstObject];
-    
     CGPoint point = [touch locationInView:self];
     
     //点击属于第几块区域
@@ -74,103 +73,12 @@
     UIView *bgView = [self viewWithTag:index];
     UIImageView *cordLine = (UIImageView *)[bgView viewWithTag:160707];
     if (cordLine) {
-//        [HDAnimationAssist springAnimationInView:cordLine];
-//        [self aaaa:cordLine value:1.4];
-//        [self bbbb:cordLine value:3 y:cordLine.frameOriginY];
-
-        [self ccc:cordLine y:5];
-    }
-}
-
-- (NSValue *)getValue:(CGPoint)point{
-    return [NSValue valueWithCGPoint:point];
-}
-
-- (void )ccc:(UIView *)view y:(CGFloat)y{
-    //获取到当前View的layer
-    CALayer *viewLayer = view.layer;
-    
-    CGPoint position = viewLayer.position;
-    
-    //设置动画
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position.y"];
-    //设置运动形式
-    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
-
-    NSMutableArray *arr = [NSMutableArray array];
-    int total = 30;
-    for (int i=0; i<total; i++) {
+        [HDAnimationAssist combinAnimationInView:cordLine amplitude:2];
         
-        y -= (y / total);
-        
-        NSLog(@"yyy : %f", y);
-        
-        if (i % 2 == 0) {
-            [arr addObject:@(position.y + y)];
-        }
-        else {
-            [arr addObject:@(position.y - y)];
+        if (_delegate && [_delegate respondsToSelector:@selector(hdGuitarCordView:atIndex:)]) {
+            [_delegate hdGuitarCordView:self atIndex:index];
         }
     }
-    
-    animation.values = arr;
-    
-    //设置时间
-    [animation setDuration:0.8];
-    
-    //添加上动画
-    [viewLayer addAnimation:animation forKey:nil];
-}
-
-- (void)bbbb:(UIView *)view value:(CGFloat)value y:(CGFloat)y{
-    
-    if (value <= 1) {
-        [UIView animateWithDuration:0.1 animations:^{
-            view.frameOriginY = y;
-        }];
-        return ;
-    }
-    
-    [UIView animateWithDuration:0.005 animations:^{
-        view.frameOriginY = y + value;
-    } completion:^(BOOL finished) {
-        if (finished) {
-            [UIView animateWithDuration:0.005 animations:^{
-                view.frameOriginY = y - value - 0.1;
-            } completion:^(BOOL finished) {
-                if (finished) {
-                    [self bbbb:view value:value - 0.2 y:y];
-                }
-            }];
-        }
-    }];
-}
-
-static BOOL dan = YES;
-- (void)aaaa:(UIView *)view value:(CGFloat)value{
-    
-    NSLog(@"value : %f", value);
-    
-    if (value <= 1) {
-        [UIView animateWithDuration:0.1 animations:^{
-           view.transform = CGAffineTransformIdentity; 
-        }];
-        return ;
-    }
-    
-    [UIView animateWithDuration:0.01 animations:^{
-        view.transform = CGAffineTransformMakeScale(value, value);
-    } completion:^(BOOL finished) {
-        if (finished) {
-            if (dan) {
-                [self aaaa:view value:value-0.88];
-            }
-            else {
-                [self aaaa:view value:value+0.8];
-            }
-            dan = !dan;
-        }
-    }];
 }
 
 @end
