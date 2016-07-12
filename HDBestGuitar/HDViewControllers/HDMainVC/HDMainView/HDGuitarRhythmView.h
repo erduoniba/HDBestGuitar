@@ -13,12 +13,20 @@
 @protocol HDGuitarRhythmViewDelegate <NSObject>
 
 /**
- *  选择右手节奏
+ *  选择开始右手节奏
  *
  *  @param rhythmView
  *  @param index      选择第几个节奏
  */
-- (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView atIndex:(NSInteger)index;
+- (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchBeginAtIndex:(NSInteger)index;
+
+/**
+ *  结束右手节奏
+ *
+ *  @param rhythmView
+ *  @param index      选择第几个节奏
+ */
+- (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchEndAtIndex:(NSInteger)index;
 
 @end
 

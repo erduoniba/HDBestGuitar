@@ -19,18 +19,16 @@
 #import "HDGuitarRhythmView.h"
 
 
-@interface HDMainViewController () <HDGuitarCordViewDelegate>
+@interface HDMainViewController () <HDGuitarCordViewDelegate, HDGuitarRhythmViewDelegate>
 
 PROPERTY_STRONG UIImageView *bgView;
 PROPERTY_STRONG HDGuitarCordView *guitarCordView;
+PROPERTY_STRONG HDGuitarRhythmView *rhythmView;
 
 @end
 
 @implementation HDMainViewController
 
-- (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView atIndex:(NSInteger)index{
-    
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,12 +42,9 @@ PROPERTY_STRONG HDGuitarCordView *guitarCordView;
     _guitarCordView.delegate = self;
     [self.view addSubview:_guitarCordView];
     
-    HDGuitarRhythmView *rhythmView = [[HDGuitarRhythmView alloc] initWithFrame:CGRectMake(10, 0, 81, self.view.frameSizeHeight)];
-    rhythmView.delegate = self;
-    [self.view addSubview:rhythmView];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hhhhhh)];
-    [self.view addGestureRecognizer:tap];
+    _rhythmView = [[HDGuitarRhythmView alloc] initWithFrame:CGRectMake(10, 0, 81, self.view.frameSizeHeight)];
+    _rhythmView.delegate = self;
+    [self.view addSubview:_rhythmView];
 }
 
 
@@ -59,10 +54,20 @@ PROPERTY_STRONG HDGuitarCordView *guitarCordView;
     [HDMidiPlayAssist playMidiNote:[arr[index][0] unsignedIntegerValue]];
 }
 
-- (void)hhhhhh{
-
+#pragma mark - HDGuitarRhythmViewDelegate
+- (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchBeginAtIndex:(NSInteger)index{
+    [HDMidiPlayAssist playGuitarAtCord:index grade:0];
 }
 
+- (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchEndAtIndex:(NSInteger)index{
+    
+    if (index == 0) {
+        [HDMidiPlayAssist playGuitarAtCords:@[@5, @2, @1, @2, @0, @2, @1, @2] grades:@[@0, @0, @0, @0, @0, @0, @0, @0]];
+    }
+    else {
+        [HDMidiPlayAssist playGuitarAtCords:@[@4, @2, @1, @2, @0, @2, @1, @2] grades:@[@0, @0, @0, @0, @0, @0, @0, @0]];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

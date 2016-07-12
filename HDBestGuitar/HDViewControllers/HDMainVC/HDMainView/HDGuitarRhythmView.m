@@ -45,16 +45,26 @@
         [rhythmBt setImage:image forState:UIControlStateNormal];
         [rhythmBt setImage:image forState:UIControlStateHighlighted];
         [rhythmBt setImage:image forState:UIControlStateSelected];
-        [rhythmBt addTarget:self action:@selector(rhythmAction:) forControlEvents:UIControlEventTouchUpInside];
+        [rhythmBt addTarget:self action:@selector(rhythmActionBegin:) forControlEvents:UIControlEventTouchDown];
+        [rhythmBt addTarget:self action:@selector(rhythmActionEnd:) forControlEvents:UIControlEventTouchUpInside];
+        [rhythmBt addTarget:self action:@selector(rhythmActionEnd:) forControlEvents:UIControlEventTouchDragExit];
+        
         
         [self addSubview:rhythmBt];
     }
 }
 
-- (void)rhythmAction:(UIButton *)rhythmBt{
-    if (_delegate && [_delegate respondsToSelector:@selector(hdGuitarRhythmView:atIndex:)]) {
-        [_delegate hdGuitarRhythmView:self atIndex:rhythmBt.tag];
+- (void)rhythmActionBegin:(UIButton *)rhythmBt{
+    if (_delegate && [_delegate respondsToSelector:@selector(hdGuitarRhythmView:touchBeginAtIndex:)]) {
+        [_delegate hdGuitarRhythmView:self touchBeginAtIndex:rhythmBt.tag];
     }
 }
+
+- (void)rhythmActionEnd:(UIButton *)rhythmBt{
+    if (_delegate && [_delegate respondsToSelector:@selector(hdGuitarRhythmView:touchEndAtIndex:)]) {
+        [_delegate hdGuitarRhythmView:self touchEndAtIndex:rhythmBt.tag];
+    }
+}
+
 
 @end
