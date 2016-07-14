@@ -229,6 +229,7 @@
                                  };
             // 因为在播放midi的时候，同步进行, 使用 performSelector 不需要耗时, 就是这么严谨
             [self performSelector:@selector(recursionPlayMidi:) withObject:_guitarGroupInfo afterDelay:([[intervals lastObject] floatValue])];
+            
         }
         
         return ;
@@ -240,8 +241,7 @@
     /*
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(([intervals[index-1] floatValue] - 0.02) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self playGuitarAtCord:[cords[index] integerValue] grade:[grades[index] integerValue]];
-        [self playGuitarAtCords:cords grades:grades intervals:intervals index:index+1];
-    });
+     });
      */
     
     _guitarGroupInfo = @{
