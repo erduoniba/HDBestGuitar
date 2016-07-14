@@ -55,7 +55,7 @@ PROPERTY_STRONG HDGuitarRhythmView *rhythmView;
 
 #pragma mark - HDGuitarRhythmViewDelegate
 - (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchBeginAtIndex:(NSInteger)index{
-    [HDMidiPlayAssist playGuitarAtCord:index grade:0];
+//    [HDMidiPlayAssist playGuitarAtCord:index grade:0];
 }
 
 - (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchEndAtIndex:(NSInteger)index{

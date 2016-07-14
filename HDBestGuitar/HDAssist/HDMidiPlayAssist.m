@@ -65,8 +65,13 @@
  *
  *  @param note 音符，具体见项目README.md文件说明
  */
+static CFAbsoluteTime fff;
 + (void)playMidiNote:(NSUInteger)note{
-    DLog(@"播放 %d 音符", (int)note);
+    if (fff == 0) {
+        fff = CFAbsoluteTimeGetCurrent();
+    }
+    DLog(@"播放 %d 音符  时间间隔%0.2f秒", (int)note, CFAbsoluteTimeGetCurrent() - fff);
+    fff = CFAbsoluteTimeGetCurrent();
     
     MIKMIDINoteOnCommand *noteOn = [MIKMIDINoteOnCommand noteOnCommandWithNote:note velocity:127 channel:0 timestamp:[NSDate date]];
     [self.midiSynthesizer handleMIDIMessages:@[noteOn]];
@@ -82,7 +87,7 @@
     NSMutableArray *commands = [NSMutableArray array];
     NSMutableString *noteString = [NSMutableString string];
     [notes enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [noteString appendFormat:@"%d", obj.intValue];
+        [noteString appendFormat:@"%d ", obj.intValue];
         MIKMIDINoteOnCommand *noteOn = [MIKMIDINoteOnCommand noteOnCommandWithNote:obj.unsignedIntegerValue velocity:127 channel:0 timestamp:[NSDate date]];
         [commands addObject:noteOn];
     }];
@@ -104,6 +109,7 @@
     NSUInteger note = [notes[cord][grade] unsignedIntegerValue];
     [self playMidiNote:note];
 }
+
 
 /**
  *  使用吉他的一组弦位和品位来播放midi音符，默认在0.5秒后停止播放该音符
@@ -127,15 +133,20 @@
  *  @param intervals 一组时间间隔（个数要和弦位一样）
  */
 + (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades intervals:(NSArray *)intervals{
-    CGFloat time = 0;
     [self playGuitarAtCord:[cords[0] integerValue] grade:[grades[0] integerValue]];
-    
-    for (int i=1; i<cords.count; i++) {
-        time += [intervals[i-1] floatValue];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self playGuitarAtCord:[cords[i] integerValue] grade:[grades[i] integerValue]];
-        });
+    [self playGuitarAtCords:cords grades:grades intervals:intervals index:1];
+}
+
+// 使用递归方法来处理 时间间隔 播放
++ (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades intervals:(NSArray *)intervals index:(NSInteger)index{
+    if (cords.count <= index) {
+        return ;
     }
+    //因为在播放midi的时候，同步进行，需要大概0.02秒的耗时, 就是这么严谨
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(([intervals[index-1] floatValue] - 0.02) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self playGuitarAtCord:[cords[index] integerValue] grade:[grades[index] integerValue]];
+        [self playGuitarAtCords:cords grades:grades intervals:intervals index:index+1];
+    });
 }
 
 @end
