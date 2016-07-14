@@ -68,15 +68,28 @@
 + (void)playMidiNote:(NSUInteger)note{
     DLog(@"播放 %d 音符", (int)note);
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        MIKMIDINoteOnCommand *noteOn = [MIKMIDINoteOnCommand noteOnCommandWithNote:note velocity:127 channel:0 timestamp:[NSDate date]];
-        [self.midiSynthesizer handleMIDIMessages:@[noteOn]];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            MIKMIDINoteOffCommand *noteOff = [MIKMIDINoteOffCommand noteOffCommandWithNote:note velocity:127 channel:0 timestamp:[NSDate date]];
-            [self.midiSynthesizer handleMIDIMessages:@[noteOff]];
-        });
-    });
+    MIKMIDINoteOnCommand *noteOn = [MIKMIDINoteOnCommand noteOnCommandWithNote:note velocity:127 channel:0 timestamp:[NSDate date]];
+    [self.midiSynthesizer handleMIDIMessages:@[noteOn]];
+}
+
+/**
+ *  直接播放midi音符组，默认在0.5秒后停止播放该音符 （同时播放）
+ *
+ *  @param notes 音符组，具体见项目README.md文件说明
+ */
++ (void)playMidiNotes:(NSArray <NSNumber *> *)notes{
+    
+    NSMutableArray *commands = [NSMutableArray array];
+    NSMutableString *noteString = [NSMutableString string];
+    [notes enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [noteString appendFormat:@"%d", obj.intValue];
+        MIKMIDINoteOnCommand *noteOn = [MIKMIDINoteOnCommand noteOnCommandWithNote:obj.unsignedIntegerValue velocity:127 channel:0 timestamp:[NSDate date]];
+        [commands addObject:noteOn];
+    }];
+    
+    DLog(@"同时播放 %@ 音符组", noteString);
+    
+    [self.midiSynthesizer handleMIDIMessages:commands];
 }
 
 

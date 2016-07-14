@@ -30,6 +30,14 @@
 
 
 /**
+ *  直接播放midi音符组，默认在0.5秒后停止播放该音符 （同时播放）
+ *
+ *  @param notes 音符组，具体见项目README.md文件说明
+ */
++ (void)playMidiNotes:(NSArray <NSNumber *> *)notes;
+
+
+/**
  *  使用吉他的弦位和品位来播放midi音符，默认在0.5秒后停止播放该音符
  *
  *  @param cord  弦位

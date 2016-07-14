@@ -37,7 +37,6 @@ PROPERTY_STRONG HDGuitarRhythmView *rhythmView;
     _bgView.image = [HDImageAssist getWholeImageWithName:@"bg_chordsmode_" ofType:@"jpg"];
     [self.view addSubview:_bgView];
     
-
     _guitarCordView = [[HDGuitarCordView alloc] initWithFrame:self.view.bounds];
     _guitarCordView.delegate = self;
     [self.view addSubview:_guitarCordView];
