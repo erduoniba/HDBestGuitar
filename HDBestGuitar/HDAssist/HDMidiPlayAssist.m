@@ -14,6 +14,9 @@
 
 @interface HDMidiPlayAssist ()
 
+
+@property (nonatomic, assign) BOOL                  midiPlayAble;
+
 @property (nonatomic, strong) MIKMIDISynthesizer    *synthesizer;
 
 /**
@@ -21,7 +24,11 @@
  */
 @property (nonatomic, strong) NSArray               *guiterNodes;
 
+/**
+ *  最后一个midi播放的时间
+ */
 @property (nonatomic, assign) CFAbsoluteTime        lastMidiPlayTime;
+
 
 @end
 
@@ -32,6 +39,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         midiPlayAssist = [[HDMidiPlayAssist alloc] init];
+        midiPlayAssist.midiPlayAble = YES;
     });
     return midiPlayAssist;
 }
@@ -74,13 +82,23 @@
     return _guiterNodes;
 }
 
+
+
 #pragma mark - 播放midi方法
+/**
+ *  每次使用midi播放之前，都需要调用该方法 （暂时没有好的办法处理）
+ */
+- (void)readyToPlayMidi{
+    _midiPlayAble = YES;
+}
+
 /**
  *  直接播放midi音符，默认在0.5秒后停止播放该音符
  *
  *  @param note 音符，具体见项目README.md文件说明
  */
 - (void)playMidiNote:(NSUInteger)note{
+    
     if (_lastMidiPlayTime == 0) {
         _lastMidiPlayTime = CFAbsoluteTimeGetCurrent();
     }
@@ -92,6 +110,25 @@
     MIKMIDINoteOnCommand *noteOn = [MIKMIDINoteOnCommand noteOnCommandWithNote:note velocity:127 channel:0 timestamp:[NSDate date]];
     [self.synthesizer handleMIDIMessages:@[noteOn]];
 }
+
+
+/**
+ *  停止对播放midi音符 （单个）
+ *
+ *  @param note note 音符，具体见项目README.md文件说明
+ */
+- (void)stopPlayMidiNote:(NSUInteger)note{
+    MIKMIDINoteOffCommand *noteOff = [MIKMIDINoteOffCommand noteOffCommandWithNote:note velocity:127 channel:0 timestamp:[NSDate date]];
+    [self.synthesizer handleMIDIMessages:@[noteOff]];
+}
+
+/**
+ *  停止对播放midi音符（所有）
+ */
+- (void)stopPlayMidiAllNotes{
+    _midiPlayAble = NO;
+}
+
 
 /**
  *  直接播放midi音符组，默认在0.5秒后停止播放该音符 （同时播放）
@@ -160,6 +197,11 @@
 
 // 使用递归方法来处理 时间间隔 播放
 - (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades intervals:(NSArray *)intervals index:(NSInteger)index{
+    
+    if (!_midiPlayAble) {
+        return ;
+    }
+    
     if (cords.count <= index) {
         return ;
     }
