@@ -24,6 +24,7 @@
 PROPERTY_STRONG UIImageView *bgView;
 PROPERTY_STRONG HDGuitarCordView *guitarCordView;
 PROPERTY_STRONG HDGuitarRhythmView *rhythmView;
+PROPERTY_STRONG HDMidiPlayAssist *midiPlayAssist;
 
 @end
 
@@ -46,11 +47,17 @@ PROPERTY_STRONG HDGuitarRhythmView *rhythmView;
     [self.view addSubview:_rhythmView];
 }
 
+- (HDMidiPlayAssist *)midiPlayAssist{
+    if (!_midiPlayAssist) {
+        _midiPlayAssist = [HDMidiPlayAssist shareInstance];
+    }
+    return _midiPlayAssist;
+}
+
 
 #pragma mark - HDGuitarCordViewDelegate 
 - (void)hdGuitarCordView:(HDGuitarCordView *)guitarCordView atIndex:(NSInteger)index{
-    NSArray *arr = [HDMidiPlayAssist getGuitarNotes];
-    [HDMidiPlayAssist playMidiNote:[arr[index][0] unsignedIntegerValue]];
+    [self.midiPlayAssist playGuitarAtCord:index grade:0];
 }
 
 #pragma mark - HDGuitarRhythmViewDelegate
@@ -61,10 +68,10 @@ PROPERTY_STRONG HDGuitarRhythmView *rhythmView;
 - (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchEndAtIndex:(NSInteger)index{
     
     if (index == 0) {
-        [HDMidiPlayAssist playGuitarAtCords:@[@5, @2, @1, @2, @0, @2, @1, @2] grades:@[@0, @0, @0, @0, @0, @0, @0, @0]];
+        [self.midiPlayAssist playGuitarAtCords:@[@5, @2, @1, @2, @0, @2, @1, @2] grades:@[@0, @0, @0, @0, @0, @0, @0, @0]];
     }
     else {
-        [HDMidiPlayAssist playGuitarAtCords:@[@4, @2, @1, @2, @0, @2, @1, @2] grades:@[@0, @0, @0, @0, @0, @0, @0, @0]];
+        [self.midiPlayAssist playGuitarAtCords:@[@4, @2, @1, @2, @0, @2, @1, @2] grades:@[@0, @0, @0, @0, @0, @0, @0, @0]];
     }
 }
 
