@@ -57,13 +57,11 @@ PROPERTY_STRONG HDMidiPlayAssist *midiPlayAssist;
 
 #pragma mark - HDGuitarCordViewDelegate 
 - (void)hdGuitarCordView:(HDGuitarCordView *)guitarCordView atIndex:(NSInteger)index{
-    [self.midiPlayAssist readyToPlayMidi];
     [self.midiPlayAssist playGuitarAtCord:index grade:0];
 }
 
 #pragma mark - HDGuitarRhythmViewDelegate
 - (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchBeginAtIndex:(NSInteger)index{
-    [self.midiPlayAssist readyToPlayMidi];
     if (index == 0) {
         [self.midiPlayAssist playGuitarAtCords:@[@5, @2, @1, @2, @0, @2, @1, @2] grades:@[@0, @0, @0, @0, @0, @0, @0, @0]];
     }

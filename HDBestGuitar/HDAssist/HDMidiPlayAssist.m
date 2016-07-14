@@ -14,9 +14,6 @@
 
 @interface HDMidiPlayAssist ()
 
-
-@property (nonatomic, assign) BOOL                  midiPlayAble;
-
 @property (nonatomic, strong) MIKMIDISynthesizer    *synthesizer;
 
 /**
@@ -29,6 +26,11 @@
  */
 @property (nonatomic, assign) CFAbsoluteTime        lastMidiPlayTime;
 
+/**
+ *  纪录最后一组吉他的数据，用来取消该组吉他时用
+ */
+@property (nonatomic, strong) NSDictionary          *guitarGroupInfo;
+
 
 @end
 
@@ -39,7 +41,6 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         midiPlayAssist = [[HDMidiPlayAssist alloc] init];
-        midiPlayAssist.midiPlayAble = YES;
     });
     return midiPlayAssist;
 }
@@ -86,19 +87,11 @@
 
 #pragma mark - 播放midi方法
 /**
- *  每次使用midi播放之前，都需要调用该方法 （暂时没有好的办法处理）
- */
-- (void)readyToPlayMidi{
-    _midiPlayAble = YES;
-}
-
-/**
  *  直接播放midi音符，默认在0.5秒后停止播放该音符
  *
  *  @param note 音符，具体见项目README.md文件说明
  */
 - (void)playMidiNote:(NSUInteger)note{
-    
     if (_lastMidiPlayTime == 0) {
         _lastMidiPlayTime = CFAbsoluteTimeGetCurrent();
     }
@@ -126,7 +119,9 @@
  *  停止对播放midi音符（所有）
  */
 - (void)stopPlayMidiAllNotes{
-    _midiPlayAble = NO;
+    if (_guitarGroupInfo) {
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(recursionPlayMidi:) object:_guitarGroupInfo];
+    }
 }
 
 
@@ -198,18 +193,37 @@
 // 使用递归方法来处理 时间间隔 播放
 - (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades intervals:(NSArray *)intervals index:(NSInteger)index{
     
-    if (!_midiPlayAble) {
-        return ;
-    }
-    
     if (cords.count <= index) {
         return ;
     }
-    //因为在播放midi的时候，同步进行，需要大概0.02秒的耗时, 就是这么严谨
+    
+    //因为在播放midi的时候，同步进行， 使用 dispatch_after 需要大概0.02秒的耗时, 就是这么严谨
+    // gcd 没有取消 dispatch_after 方法，只能采取其它方法
+    // http://stackoverflow.com/questions/12475450/prevent-dispatch-after-background-task-from-being-executed
+    /*
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(([intervals[index-1] floatValue] - 0.02) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self playGuitarAtCord:[cords[index] integerValue] grade:[grades[index] integerValue]];
         [self playGuitarAtCords:cords grades:grades intervals:intervals index:index+1];
     });
+     */
+    
+    _guitarGroupInfo = @{
+                         @"cords"     : cords,
+                         @"grades"    : grades,
+                         @"intervals" : intervals,
+                         @"index"     : @(index)
+                         };
+    // 因为在播放midi的时候，同步进行, 使用 performSelector 不需要耗时, 就是这么严谨
+    [self performSelector:@selector(recursionPlayMidi:) withObject:_guitarGroupInfo afterDelay:([intervals[index-1] floatValue])];
+}
+
+- (void)recursionPlayMidi:(NSDictionary *)info1{
+    NSArray *cords = _guitarGroupInfo[@"cords"];
+    NSArray *grades = _guitarGroupInfo[@"grades"];
+    NSArray *intervals = _guitarGroupInfo[@"intervals"];
+    NSInteger index = [_guitarGroupInfo[@"index"] integerValue];
+    [self playGuitarAtCord:[cords[index] integerValue] grade:[grades[index] integerValue]];
+    [self playGuitarAtCords:cords grades:grades intervals:intervals index:index+1];
 }
 
 @end
