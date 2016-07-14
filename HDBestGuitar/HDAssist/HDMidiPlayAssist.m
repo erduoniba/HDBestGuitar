@@ -165,35 +165,72 @@
 
 
 /**
- *  使用吉他的一组弦位和品位(时间间隔默认是0.3秒)来播放midi音符，默认在0.5秒后停止播放该音符
+ *  使用吉他的一组弦位和品位(时间间隔默认是0.3秒)来播放midi音符，默认在0.5秒后停止播放该音符 (默认是重复播放)
  *
  *  @param cords  一组弦位
  *  @param grades 一组品位（个数要和弦位一样）
  */
 - (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades{
+    [self playGuitarAtCords:cords grades:grades repeat:YES];
+}
+
+/**
+ *  使用吉他的一组弦位和品位(时间间隔默认是0.3秒)来播放midi音符，默认在0.5秒后停止播放该音符 (默认是重复播放)
+ *
+ *  @param cords  一组弦位
+ *  @param grades 一组品位（个数要和弦位一样）
+ *  @param repeat 是否需要重复播放 (默认是重复播放)
+ */
+- (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades repeat:(BOOL)repeat{
     NSMutableArray *intervals = [NSMutableArray arrayWithCapacity:cords.count];
     for (int i=0; i<cords.count; i++) {
         [intervals addObject:@(0.3)];
     }
-    [self playGuitarAtCords:cords grades:grades intervals:intervals];
+    [self playGuitarAtCords:cords grades:grades intervals:intervals repeat:repeat];
 }
 
 /**
- *  使用吉他的一组弦位和品位 及一组时间间隔 来播放midi音符
+ *  使用吉他的一组弦位和品位 及一组时间间隔 来播放midi音符 (默认是重复播放)
  *
  *  @param cords     一组弦位
  *  @param grades    一组品位（个数要和弦位一样）
  *  @param intervals 一组时间间隔（个数要和弦位一样）
  */
 - (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades intervals:(NSArray *)intervals{
+    [self playGuitarAtCords:cords grades:grades intervals:intervals repeat:YES];
+}
+
+/**
+ *  使用吉他的一组弦位和品位 及一组时间间隔 来播放midi音符 (默认是重复播放)
+ *
+ *  @param cords     一组弦位
+ *  @param grades    一组品位（个数要和弦位一样）
+ *  @param intervals 一组时间间隔（个数要和弦位一样）
+ *  @param repeat    是否需要重复播放 (默认是重复播放)
+ */
+- (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades intervals:(NSArray *)intervals repeat:(BOOL)repeat{
     [self playGuitarAtCord:[cords[0] integerValue] grade:[grades[0] integerValue]];
-    [self playGuitarAtCords:cords grades:grades intervals:intervals index:1];
+    [self playGuitarAtCords:cords grades:grades intervals:intervals index:1 repeat:repeat];
 }
 
 // 使用递归方法来处理 时间间隔 播放
-- (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades intervals:(NSArray *)intervals index:(NSInteger)index{
+- (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades intervals:(NSArray *)intervals index:(NSInteger)index repeat:(BOOL)repeat{
     
     if (cords.count <= index) {
+        if (repeat) {
+            
+            //从 本组的 第0个 midi重新开始播放，和上一个midi的时间间隔为 intervals的最后时间
+            _guitarGroupInfo = @{
+                                 @"cords"     : cords,
+                                 @"grades"    : grades,
+                                 @"intervals" : intervals,
+                                 @"index"     : @(0),
+                                 @"repeat"    : @(repeat)
+                                 };
+            // 因为在播放midi的时候，同步进行, 使用 performSelector 不需要耗时, 就是这么严谨
+            [self performSelector:@selector(recursionPlayMidi:) withObject:_guitarGroupInfo afterDelay:([[intervals lastObject] floatValue])];
+        }
+        
         return ;
     }
     
@@ -211,7 +248,8 @@
                          @"cords"     : cords,
                          @"grades"    : grades,
                          @"intervals" : intervals,
-                         @"index"     : @(index)
+                         @"index"     : @(index),
+                         @"repeat"    : @(repeat)
                          };
     // 因为在播放midi的时候，同步进行, 使用 performSelector 不需要耗时, 就是这么严谨
     [self performSelector:@selector(recursionPlayMidi:) withObject:_guitarGroupInfo afterDelay:([intervals[index-1] floatValue])];
@@ -222,8 +260,9 @@
     NSArray *grades = _guitarGroupInfo[@"grades"];
     NSArray *intervals = _guitarGroupInfo[@"intervals"];
     NSInteger index = [_guitarGroupInfo[@"index"] integerValue];
+    BOOL repeat = [_guitarGroupInfo[@"repeat"] boolValue];
     [self playGuitarAtCord:[cords[index] integerValue] grade:[grades[index] integerValue]];
-    [self playGuitarAtCords:cords grades:grades intervals:intervals index:index+1];
+    [self playGuitarAtCords:cords grades:grades intervals:intervals index:index+1 repeat:repeat];
 }
 
 @end
