@@ -12,6 +12,9 @@
 @implementation HDGuitarCordView{
     CGFloat distance;
     CGFloat edgeDistance;
+    
+    //6弦区域是否能相应move事件（当滑动区域在 一个区域滑动时候，其他区域的ableReceviMoveTouch为YES，本区域为NO，不再多次执行同区域的播放）
+    NSMutableArray *ableReceiveMoveEvents;
 }
 
 - (CGFloat )getWidthWithP6Witdh:(CGFloat)width{
@@ -56,6 +59,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    ableReceiveMoveEvents = [NSMutableArray arrayWithObjects:@YES, @YES, @YES, @YES, @YES, @YES, nil];
     [self parseTouches:touches];
 }
 
@@ -63,19 +67,33 @@
     [self parseTouches:touches];
 }
 
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    ableReceiveMoveEvents = [NSMutableArray arrayWithObjects:@YES, @YES, @YES, @YES, @YES, @YES, nil];
+}
+
 - (void)parseTouches:(NSSet<UITouch *> *)touches{
     UITouch *touch = [touches.allObjects firstObject];
     CGPoint point = [touch locationInView:self];
     
-    //点击属于第几块区域
+    //点击或者滑动区域属于第几块区域
     NSInteger index = roundf(point.y / distance) - 1;
-    UIView *bgView = [self viewWithTag:index];
-    UIImageView *cordLine = (UIImageView *)[bgView viewWithTag:160707];
-    if (cordLine) {
-        if (_delegate && [_delegate respondsToSelector:@selector(hdGuitarCordView:atIndex:)]) {
-            // 代理执行播放功能，然后在播放功能中会调用 animationGuitarCordLineAtIndex 执行动画
-            [_delegate hdGuitarCordView:self atIndex:6-index];
+    if (index > 5 || index < 0) {
+        return ;
+    }
+    
+    BOOL ableReceviMoveTouch = [ableReceiveMoveEvents[index] boolValue];
+    if (ableReceviMoveTouch) {
+        UIView *bgView = [self viewWithTag:index];
+        UIImageView *cordLine = (UIImageView *)[bgView viewWithTag:160707];
+        if (cordLine) {
+            if (_delegate && [_delegate respondsToSelector:@selector(hdGuitarCordView:atIndex:)]) {
+                // 代理执行播放功能，然后在播放功能中会调用 animationGuitarCordLineAtIndex 执行动画
+                [_delegate hdGuitarCordView:self atIndex:6-index];
+            }
         }
+        // 当滑动区域在 一个区域滑动时候，其他区域的ableReceviMoveTouch为YES，本区域为NO，不再多次执行同区域的播放
+        ableReceiveMoveEvents = [NSMutableArray arrayWithObjects:@YES, @YES, @YES, @YES, @YES, @YES, nil];
+        ableReceiveMoveEvents[index] = @NO;
     }
 }
 
