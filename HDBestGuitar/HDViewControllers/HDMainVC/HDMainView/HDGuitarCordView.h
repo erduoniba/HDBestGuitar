@@ -31,4 +31,11 @@
 
 @property (nonatomic, assign) id <HDGuitarCordViewDelegate> delegate;
 
+/**
+ *  促发 第 index 弦动画效果
+ *
+ *  @param index
+ */
+- (void)animationGuitarCordLineAtIndex:(NSInteger)index;
+
 @end

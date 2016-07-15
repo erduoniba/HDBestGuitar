@@ -14,6 +14,11 @@
 @interface HDMidiPlayAssist : NSObject
 
 /**
+ *  播放的第几弦，播放的第几品
+ */
+@property (nonatomic, copy) void (^ midiPlayCordGradeHandle)(NSArray *cords, NSArray *grades);
+
+/**
  *  需要使用单例类来管理 midi 播放，因为需要播放，也需要停止播放
  *
  *  @return 实例对象

@@ -159,8 +159,15 @@
  *  @param grade 品位
  */
 - (void)playGuitarAtCord:(NSInteger)cord grade:(NSInteger)grade{
-    NSUInteger note = [self.guiterNodes[cord][grade] unsignedIntegerValue];
+    
+    DLog(@"弦位： %d  品位： %d", (int)cord, (int)grade);
+    
+    // 弦位是 6-1， 数据是 5-0，需要减1操作
+    NSUInteger note = [self.guiterNodes[cord - 1][grade] unsignedIntegerValue];
     [self playMidiNote:note];
+    if (_midiPlayCordGradeHandle) {
+        _midiPlayCordGradeHandle(@[[NSNumber numberWithInteger:cord]], @[[NSNumber numberWithInteger:grade]]);
+    }
 }
 
 

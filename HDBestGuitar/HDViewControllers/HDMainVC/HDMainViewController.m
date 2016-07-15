@@ -6,6 +6,8 @@
 //  Copyright © 2016年 HarryDeng. All rights reserved.
 //
 
+
+
 #import "HDMainViewController.h"
 
 #pragma mark - assists
@@ -50,6 +52,13 @@ PROPERTY_STRONG HDMidiPlayAssist *midiPlayAssist;
 - (HDMidiPlayAssist *)midiPlayAssist{
     if (!_midiPlayAssist) {
         _midiPlayAssist = [HDMidiPlayAssist shareInstance];
+        @weakify(self);
+        _midiPlayAssist.midiPlayCordGradeHandle = ^(NSArray *cords, NSArray *grades){
+            [cords enumerateObjectsUsingBlock:^(NSNumber *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                @strongify(self);
+                [self.guitarCordView animationGuitarCordLineAtIndex:obj.integerValue];
+            }];
+        };
     }
     return _midiPlayAssist;
 }
@@ -63,10 +72,10 @@ PROPERTY_STRONG HDMidiPlayAssist *midiPlayAssist;
 #pragma mark - HDGuitarRhythmViewDelegate
 - (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchBeginAtIndex:(NSInteger)index{
     if (index == 0) {
-        [self.midiPlayAssist playGuitarAtCords:@[@5, @2, @1, @2, @0, @2, @1, @2] grades:@[@0, @0, @0, @0, @0, @0, @0, @0]];
+        [self.midiPlayAssist playGuitarAtCords:@[@6, @3, @2, @3, @1, @3, @2, @3] grades:@[@0, @0, @0, @0, @0, @0, @0, @0]];
     }
     else {
-        [self.midiPlayAssist playGuitarAtCords:@[@4, @2, @1, @2, @0, @2, @1, @2] grades:@[@0, @0, @0, @0, @0, @0, @0, @0]];
+        [self.midiPlayAssist playGuitarAtCords:@[@5, @3, @2, @3, @1, @3, @2, @3] grades:@[@0, @0, @0, @0, @0, @0, @0, @0]];
     }
 }
 

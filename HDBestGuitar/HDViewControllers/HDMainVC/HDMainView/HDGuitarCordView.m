@@ -72,11 +72,18 @@
     UIView *bgView = [self viewWithTag:index];
     UIImageView *cordLine = (UIImageView *)[bgView viewWithTag:160707];
     if (cordLine) {
-        [HDAnimationAssist combinAnimationInView:cordLine amplitude:2];
-        
         if (_delegate && [_delegate respondsToSelector:@selector(hdGuitarCordView:atIndex:)]) {
-            [_delegate hdGuitarCordView:self atIndex:5-index];
+            // 代理执行播放功能，然后在播放功能中会调用 animationGuitarCordLineAtIndex 执行动画
+            [_delegate hdGuitarCordView:self atIndex:6-index];
         }
+    }
+}
+
+- (void)animationGuitarCordLineAtIndex:(NSInteger)index{
+    UIView *bgView = [self viewWithTag:6-index];
+    UIImageView *cordLine = (UIImageView *)[bgView viewWithTag:160707];
+    if (cordLine) {
+        [HDAnimationAssist combinAnimationInView:cordLine amplitude:2];
     }
 }
 
