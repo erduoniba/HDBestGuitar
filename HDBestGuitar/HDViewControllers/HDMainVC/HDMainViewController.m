@@ -19,14 +19,19 @@
 #pragma mark - views
 #import "HDGuitarCordView.h"
 #import "HDGuitarRhythmView.h"
+#import "HDGuitarChordView.h"
+#import "HDGuitarChordModel.h"
 
 
-@interface HDMainViewController () <HDGuitarCordViewDelegate, HDGuitarRhythmViewDelegate>
+@interface HDMainViewController () <HDGuitarCordViewDelegate, HDGuitarRhythmViewDelegate, HDGuitarChordViewDelegate>
 
-PROPERTY_STRONG UIImageView *bgView;
-PROPERTY_STRONG HDGuitarCordView *guitarCordView;
-PROPERTY_STRONG HDGuitarRhythmView *rhythmView;
-PROPERTY_STRONG HDMidiPlayAssist *midiPlayAssist;
+PROPERTY_STRONG UIImageView         *bgView;
+PROPERTY_STRONG HDGuitarCordView    *guitarCordView;
+PROPERTY_STRONG HDGuitarChordView   *guitarChordView;
+PROPERTY_STRONG HDGuitarRhythmView  *guitarRhythmView;
+
+PROPERTY_STRONG HDMidiPlayAssist    *midiPlayAssist;
+PROPERTY_STRONG NSArray             *selectGrades;   //选择的和弦品位组
 
 @end
 
@@ -36,6 +41,8 @@ PROPERTY_STRONG HDMidiPlayAssist *midiPlayAssist;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _selectGrades = @[@0, @0, @0, @0, @0, @0, @0, @0];
+    
     _bgView = [[UIImageView alloc] initWithFrame:self.view.frame];
     _bgView.image = [HDImageAssist getWholeImageWithName:@"bg_chordsmode_" ofType:@"jpg"];
     [self.view addSubview:_bgView];
@@ -44,9 +51,14 @@ PROPERTY_STRONG HDMidiPlayAssist *midiPlayAssist;
     _guitarCordView.delegate = self;
     [self.view addSubview:_guitarCordView];
     
-    _rhythmView = [[HDGuitarRhythmView alloc] initWithFrame:CGRectMake(10, 0, 81, self.view.frameSizeHeight)];
-    _rhythmView.delegate = self;
-    [self.view addSubview:_rhythmView];
+    _guitarRhythmView = [[HDGuitarRhythmView alloc] initWithFrame:CGRectMake(10, 0, 81, self.view.frameSizeHeight)];
+    _guitarRhythmView.delegate = self;
+    [self.view addSubview:_guitarRhythmView];
+    
+    _guitarChordView = [[HDGuitarChordView alloc] initWithFrame:CGRectMake(self.view.frameSizeWidth - 91, 0, 81, self.view.frameSizeHeight)];
+    _guitarChordView.chords = [HDGuitarChordModel defaultChords];
+    _guitarChordView.delegate = self;
+    [self.view addSubview:_guitarChordView];
 }
 
 - (HDMidiPlayAssist *)midiPlayAssist{
@@ -66,21 +78,27 @@ PROPERTY_STRONG HDMidiPlayAssist *midiPlayAssist;
 
 #pragma mark - HDGuitarCordViewDelegate 
 - (void)hdGuitarCordView:(HDGuitarCordView *)guitarCordView atIndex:(NSInteger)index{
-    [self.midiPlayAssist playGuitarAtCord:index grade:0];
+    NSInteger grade = [_selectGrades[index - 1] integerValue];
+    [self.midiPlayAssist playGuitarAtCord:index grade:grade];
 }
 
 #pragma mark - HDGuitarRhythmViewDelegate
 - (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchBeginAtIndex:(NSInteger)index{
     if (index == 0) {
-        [self.midiPlayAssist playGuitarAtCords:@[@6, @3, @2, @3, @1, @3, @2, @3] grades:@[@0, @0, @0, @0, @0, @0, @0, @0]];
+        [self.midiPlayAssist playGuitarAtCords:@[@6, @3, @2, @3, @1, @3, @2, @3] grades:_selectGrades];
     }
     else {
-        [self.midiPlayAssist playGuitarAtCords:@[@5, @3, @2, @3, @1, @3, @2, @3] grades:@[@0, @0, @0, @0, @0, @0, @0, @0]];
+        [self.midiPlayAssist playGuitarAtCords:@[@5, @3, @2, @3, @1, @3, @2, @3] grades:_selectGrades];
     }
 }
 
 - (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchEndAtIndex:(NSInteger)index{
     [self.midiPlayAssist stopPlayMidiAllNotes];
+}
+
+#pragma mark - HDGuitarChordViewDelegate
+- (void)hdGuitarChordView:(HDGuitarChordView *)guitarChordView grades:(NSArray *)grades{
+    _selectGrades = grades;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -32,6 +32,10 @@
 		045101A81D2CDE0D007B1E5F /* MIKMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045101A61D2CDBC5007B1E5F /* MIKMIDI.framework */; };
 		045101AB1D2CE154007B1E5F /* MIKMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045101A61D2CDBC5007B1E5F /* MIKMIDI.framework */; };
 		045101AC1D2CE154007B1E5F /* MIKMIDI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 045101A61D2CDBC5007B1E5F /* MIKMIDI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		045C96FC1D3891FC00535972 /* btn_accord_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045C96FB1D3891FC00535972 /* btn_accord_press@2x.png */; };
+		045C96FE1D38920500535972 /* btn_accord@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045C96FD1D38920500535972 /* btn_accord@2x.png */; };
+		045C97011D38A64300535972 /* HDGuitarChordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C97001D38A64300535972 /* HDGuitarChordView.m */; };
+		045C97051D38BC9C00535972 /* HDGuitarChordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C97041D38BC9C00535972 /* HDGuitarChordModel.m */; };
 		20F92D832DB3C3AD442C04BC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D75B61A34E665EF3F996C8 /* libPods.a */; };
 		638BE35BDA9B6AF569483EC7 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FC53291ECD67A510C7CE2546 /* libstdc++.tbd */; };
 		7AB1AEAB37ED7491DD51224D /* Rollout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E5D24D097F8DF13D842B6D /* Rollout.framework */; };
@@ -100,6 +104,12 @@
 		045101A01D2CD799007B1E5F /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		045101A21D2CD949007B1E5F /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		045101A61D2CDBC5007B1E5F /* MIKMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MIKMIDI.framework; sourceTree = "<group>"; };
+		045C96FB1D3891FC00535972 /* btn_accord_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_accord_press@2x.png"; sourceTree = "<group>"; };
+		045C96FD1D38920500535972 /* btn_accord@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_accord@2x.png"; sourceTree = "<group>"; };
+		045C96FF1D38A64300535972 /* HDGuitarChordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDGuitarChordView.h; sourceTree = "<group>"; };
+		045C97001D38A64300535972 /* HDGuitarChordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDGuitarChordView.m; sourceTree = "<group>"; };
+		045C97031D38BC9C00535972 /* HDGuitarChordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDGuitarChordModel.h; sourceTree = "<group>"; };
+		045C97041D38BC9C00535972 /* HDGuitarChordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDGuitarChordModel.m; sourceTree = "<group>"; };
 		42E5D24D097F8DF13D842B6D /* Rollout.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Rollout.framework; path = "Rollout-ios-SDK/Rollout/Rollout.framework"; sourceTree = "<group>"; };
 		56836D00D0D0CD97E5DC731D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		60780EC9BEF52780F54A4880 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +191,8 @@
 				0400D8911D2E41E600479A9D /* HDGuitarCordView.m */,
 				04334A591D2F7C170002FBEF /* HDGuitarRhythmView.h */,
 				04334A5A1D2F7C170002FBEF /* HDGuitarRhythmView.m */,
+				045C96FF1D38A64300535972 /* HDGuitarChordView.h */,
+				045C97001D38A64300535972 /* HDGuitarChordView.m */,
 			);
 			path = HDMainView;
 			sourceTree = "<group>";
@@ -209,6 +221,7 @@
 			children = (
 				045100A71D2CACF2007B1E5F /* AppDelegate.h */,
 				045100A81D2CACF2007B1E5F /* AppDelegate.m */,
+				045C97021D38B7D000535972 /* HDModels */,
 				0400D8871D2E3DFF00479A9D /* HDViewControllers */,
 				D96BEFB71D2D4938008B74F8 /* HDAssist */,
 				045100BE1D2CB4B7007B1E5F /* ThridPartLib */,
@@ -257,6 +270,15 @@
 			path = MIKMIDI;
 			sourceTree = "<group>";
 		};
+		045C97021D38B7D000535972 /* HDModels */ = {
+			isa = PBXGroup;
+			children = (
+				045C97031D38BC9C00535972 /* HDGuitarChordModel.h */,
+				045C97041D38BC9C00535972 /* HDGuitarChordModel.m */,
+			);
+			path = HDModels;
+			sourceTree = "<group>";
+		};
 		99D5A98F8D47AD842DF4BB68 /* Rollout */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +325,8 @@
 				04334A541D2F7A7C0002FBEF /* buts_press@2x.png */,
 				04334A5C1D2FADD90002FBEF /* btn_setting@2x.png */,
 				04334A551D2F7A7C0002FBEF /* buts@2x.png */,
+				045C96FB1D3891FC00535972 /* btn_accord_press@2x.png */,
+				045C96FD1D38920500535972 /* btn_accord@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -393,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045C96FC1D3891FC00535972 /* btn_accord_press@2x.png in Resources */,
 				04334A5D1D2FADD90002FBEF /* btn_setting@2x.png in Resources */,
 				D96BEFD21D2D4D95008B74F8 /* bg_solo_left_P6@2x.jpg in Resources */,
 				D96BEFD31D2D4D95008B74F8 /* bg_solo_left_P6P@3x.jpg in Resources */,
@@ -406,6 +431,7 @@
 				D96BEFC71D2D4D47008B74F8 /* bg_chordsmode_black_P6P@3x.jpg in Resources */,
 				04334A4E1D2F58E30002FBEF /* GeneralUser GS MuseScore v1.442.sf2 in Resources */,
 				D96BEFBF1D2D4C31008B74F8 /* bg_chordsmode_P6@2x.jpg in Resources */,
+				045C96FE1D38920500535972 /* btn_accord@2x.png in Resources */,
 				D96BEFC11D2D4C4D008B74F8 /* bg_chordsmode_P6P@3x.jpg in Resources */,
 				D96BEFC51D2D4D47008B74F8 /* bg_chordsmode_black_P4@2x.jpg in Resources */,
 				0400D8821D2DF40E00479A9D /* cord6@2x.png in Resources */,
@@ -523,8 +549,10 @@
 				045100A91D2CACF2007B1E5F /* AppDelegate.m in Sources */,
 				045100A61D2CACF2007B1E5F /* main.m in Sources */,
 				0400D8851D2E398F00479A9D /* HDAnimationAssist.m in Sources */,
+				045C97051D38BC9C00535972 /* HDGuitarChordModel.m in Sources */,
 				04334A5B1D2F7C170002FBEF /* HDGuitarRhythmView.m in Sources */,
 				0400D88E1D2E3F7D00479A9D /* HDMainViewController.m in Sources */,
+				045C97011D38A64300535972 /* HDGuitarChordView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

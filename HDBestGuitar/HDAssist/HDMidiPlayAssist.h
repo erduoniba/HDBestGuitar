@@ -67,7 +67,7 @@
  *  使用吉他的一组弦位和品位(时间间隔默认是0.3秒)来播放midi音符，默认在0.5秒后停止播放该音符 (默认是重复播放)
  *
  *  @param cords  一组弦位
- *  @param grades 一组品位（个数要和弦位一样）
+ *  @param grades 一组品位（6个数据）
  */
 - (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades;
 
@@ -75,7 +75,7 @@
  *  使用吉他的一组弦位和品位(时间间隔默认是0.3秒)来播放midi音符，默认在0.5秒后停止播放该音符 (默认是重复播放)
  *
  *  @param cords  一组弦位
- *  @param grades 一组品位（个数要和弦位一样）
+ *  @param grades 一组品位（6个数据）
  *  @param repeat 是否需要重复播放 (默认是重复播放)
  */
 - (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades repeat:(BOOL)repeat;
@@ -84,7 +84,7 @@
  *  使用吉他的一组弦位和品位 及一组时间间隔 来播放midi音符 (默认是重复播放)
  *
  *  @param cords     一组弦位
- *  @param grades    一组品位（个数要和弦位一样）
+ *  @param grades    一组品位（6个数据）
  *  @param intervals 一组时间间隔（个数要和弦位一样）
  */
 - (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades intervals:(NSArray *)intervals;
@@ -93,7 +93,7 @@
  *  使用吉他的一组弦位和品位 及一组时间间隔 来播放midi音符 (默认是重复播放)
  *
  *  @param cords     一组弦位
- *  @param grades    一组品位（个数要和弦位一样）
+ *  @param grades    一组品位（6个数据）
  *  @param intervals 一组时间间隔（个数要和弦位一样）
  *  @param repeat    是否需要重复播放 (默认是重复播放)
  */
