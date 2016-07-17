@@ -9,6 +9,7 @@
 #import "HDGuitarRhythmView.h"
 
 #import <HDBaseProject/UIImage+Tint.h>
+#import "HDGuitarRhythmModel.h"
 
 @implementation HDGuitarRhythmView
 
@@ -34,9 +35,14 @@
         UIImage *image = [UIImage imageNamed:@"buts_icon"];
         if (i == 4){
             image = [UIImage imageNamed:@"btn_setting"];
+            [rhythmBt addTarget:self action:@selector(rhythmActionSet) forControlEvents:UIControlEventTouchUpInside];
         }
         else {
             image = [image imageTintedWithColor:UIColorFromRGB(198, 131, (i + 2) * 40)];
+            
+            [rhythmBt addTarget:self action:@selector(rhythmActionBegin:) forControlEvents:UIControlEventTouchDown];
+            [rhythmBt addTarget:self action:@selector(rhythmActionEnd:) forControlEvents:UIControlEventTouchUpInside];
+            [rhythmBt addTarget:self action:@selector(rhythmActionEnd:) forControlEvents:UIControlEventTouchDragExit];
         }
         
         [rhythmBt setBackgroundImage:[UIImage imageNamed:@"buts"] forState:UIControlStateNormal];
@@ -45,24 +51,28 @@
         [rhythmBt setImage:image forState:UIControlStateNormal];
         [rhythmBt setImage:image forState:UIControlStateHighlighted];
         [rhythmBt setImage:image forState:UIControlStateSelected];
-        [rhythmBt addTarget:self action:@selector(rhythmActionBegin:) forControlEvents:UIControlEventTouchDown];
-        [rhythmBt addTarget:self action:@selector(rhythmActionEnd:) forControlEvents:UIControlEventTouchUpInside];
-        [rhythmBt addTarget:self action:@selector(rhythmActionEnd:) forControlEvents:UIControlEventTouchDragExit];
-        
-        
+
         [self addSubview:rhythmBt];
     }
 }
 
+- (void)setRhythms:(NSArray<HDGuitarRhythmModel *> *)rhythms{
+    _rhythms = rhythms;
+}
+
+- (void)rhythmActionSet{
+    
+}
+
 - (void)rhythmActionBegin:(UIButton *)rhythmBt{
-    if (_delegate && [_delegate respondsToSelector:@selector(hdGuitarRhythmView:touchBeginAtIndex:)]) {
-        [_delegate hdGuitarRhythmView:self touchBeginAtIndex:rhythmBt.tag];
+    if (_delegate && [_delegate respondsToSelector:@selector(hdGuitarRhythmView:touchBeginRhythmModel:)]) {
+        [_delegate hdGuitarRhythmView:self touchBeginRhythmModel:_rhythms[rhythmBt.tag]];
     }
 }
 
 - (void)rhythmActionEnd:(UIButton *)rhythmBt{
-    if (_delegate && [_delegate respondsToSelector:@selector(hdGuitarRhythmView:touchEndAtIndex:)]) {
-        [_delegate hdGuitarRhythmView:self touchEndAtIndex:rhythmBt.tag];
+    if (_delegate && [_delegate respondsToSelector:@selector(hdGuitarRhythmView:touchEndRhythmModel:)]) {
+        [_delegate hdGuitarRhythmView:self touchEndRhythmModel:_rhythms[rhythmBt.tag]];
     }
 }
 

@@ -8,6 +8,9 @@
 
 #import <Mantle/Mantle.h>
 
+/**
+ *  和弦实体类 如G、C、Am
+ */
 @interface HDGuitarChordModel : MTLModel <MTLJSONSerializing>
 
 /**

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class HDGuitarRhythmView;
+@class HDGuitarRhythmModel;
 
 @protocol HDGuitarRhythmViewDelegate <NSObject>
 
@@ -16,17 +17,17 @@
  *  选择开始右手节奏
  *
  *  @param rhythmView
- *  @param index      选择第几个节奏
+ *  @param rhythm      选择节奏对象
  */
-- (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchBeginAtIndex:(NSInteger)index;
+- (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchBeginRhythmModel:(HDGuitarRhythmModel *)rhythm;
 
 /**
  *  结束右手节奏
  *
  *  @param rhythmView
- *  @param index      选择第几个节奏
+ *  @param rhythm      选择节奏对象
  */
-- (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchEndAtIndex:(NSInteger)index;
+- (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchEndRhythmModel:(HDGuitarRhythmModel *)rhythm;
 
 @end
 
@@ -36,5 +37,7 @@
 @interface HDGuitarRhythmView : UIView
 
 @property (nonatomic, weak) id <HDGuitarRhythmViewDelegate> delegate;
+
+@property (nonatomic, strong) NSArray <HDGuitarRhythmModel *>* rhythms;
 
 @end

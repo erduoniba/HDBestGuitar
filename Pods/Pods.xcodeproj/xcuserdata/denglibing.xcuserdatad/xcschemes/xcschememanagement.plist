@@ -39,6 +39,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>Mantle.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -61,6 +66,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>426BC4549A625B5E1E4200D5261A98BF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5BB592F5A0B126489F6B8EEF54AD573F</key>
 		<dict>
 			<key>primary</key>
@@ -72,6 +82,11 @@
 			<true/>
 		</dict>
 		<key>997994B14A2AA46ADBC9157ACDC61544</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9EB25EEF06D1DE727F924E959A7D0843</key>
 		<dict>
 			<key>primary</key>
 			<true/>

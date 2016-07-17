@@ -41,6 +41,7 @@
 		7AB1AEAB37ED7491DD51224D /* Rollout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E5D24D097F8DF13D842B6D /* Rollout.framework */; };
 		8D76F0E88BA7D207125DFBD7 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B227CD96939F24C000D38D27 /* JavaScriptCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D90285271D33ED2D00C0F737 /* HDMidiPlayAssist.m in Sources */ = {isa = PBXBuildFile; fileRef = D90285261D33ED2D00C0F737 /* HDMidiPlayAssist.m */; };
+		D902852A1D391EB000C0F737 /* HDGuitarRhythmModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D90285291D391EB000C0F737 /* HDGuitarRhythmModel.m */; };
 		D96BEFBA1D2D495F008B74F8 /* HDImageAssist.m in Sources */ = {isa = PBXBuildFile; fileRef = D96BEFB91D2D495F008B74F8 /* HDImageAssist.m */; };
 		D96BEFBD1D2D4BEF008B74F8 /* bg_chordsmode_P4@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96BEFBC1D2D4BEF008B74F8 /* bg_chordsmode_P4@2x.jpg */; };
 		D96BEFBF1D2D4C31008B74F8 /* bg_chordsmode_P6@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96BEFBE1D2D4C31008B74F8 /* bg_chordsmode_P6@2x.jpg */; };
@@ -117,6 +118,8 @@
 		D4D75B61A34E665EF3F996C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90285251D33ED2D00C0F737 /* HDMidiPlayAssist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDMidiPlayAssist.h; sourceTree = "<group>"; };
 		D90285261D33ED2D00C0F737 /* HDMidiPlayAssist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDMidiPlayAssist.m; sourceTree = "<group>"; };
+		D90285281D391EB000C0F737 /* HDGuitarRhythmModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDGuitarRhythmModel.h; sourceTree = "<group>"; };
+		D90285291D391EB000C0F737 /* HDGuitarRhythmModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDGuitarRhythmModel.m; sourceTree = "<group>"; };
 		D96BEFB81D2D495F008B74F8 /* HDImageAssist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDImageAssist.h; sourceTree = "<group>"; };
 		D96BEFB91D2D495F008B74F8 /* HDImageAssist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDImageAssist.m; sourceTree = "<group>"; };
 		D96BEFBC1D2D4BEF008B74F8 /* bg_chordsmode_P4@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg_chordsmode_P4@2x.jpg"; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 			children = (
 				045C97031D38BC9C00535972 /* HDGuitarChordModel.h */,
 				045C97041D38BC9C00535972 /* HDGuitarChordModel.m */,
+				D90285281D391EB000C0F737 /* HDGuitarRhythmModel.h */,
+				D90285291D391EB000C0F737 /* HDGuitarRhythmModel.m */,
 			);
 			path = HDModels;
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 				D96BEFD71D2D5105008B74F8 /* UIDevice+HDCategory.m in Sources */,
 				D96BEFBA1D2D495F008B74F8 /* HDImageAssist.m in Sources */,
 				045100A91D2CACF2007B1E5F /* AppDelegate.m in Sources */,
+				D902852A1D391EB000C0F737 /* HDGuitarRhythmModel.m in Sources */,
 				045100A61D2CACF2007B1E5F /* main.m in Sources */,
 				0400D8851D2E398F00479A9D /* HDAnimationAssist.m in Sources */,
 				045C97051D38BC9C00535972 /* HDGuitarChordModel.m in Sources */,

@@ -32,6 +32,8 @@
         chordBt.tag = i;
         chordBt.selected = NO;
         [chordBt setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [chordBt setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+        chordBt.titleLabel.font = [UIFont boldSystemFontOfSize:18];
         [chordBt setBackgroundImage:image forState:UIControlStateNormal];
         [chordBt addTarget:self action:@selector(chordAction:) forControlEvents:UIControlEventTouchUpInside];
         [chordBts addObject:chordBt];
