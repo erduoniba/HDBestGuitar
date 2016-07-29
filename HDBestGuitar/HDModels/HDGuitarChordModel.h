@@ -32,6 +32,13 @@
 + (NSArray <HDGuitarChordModel *>*)defaultChords;
 
 /**
+ * 获取系统默认所有的和弦
+ *
+ *  @return 系统默认所有的和弦
+ */
++ (NSArray <HDGuitarChordModel *>*)totalChords;
+
+/**
  * 获取一组用户自定义的和弦
  *
  *  @return 用户自定义的和弦

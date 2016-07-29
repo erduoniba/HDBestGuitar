@@ -36,6 +36,15 @@
  */
 + (NSArray <HDGuitarRhythmModel *>*)defaultRhythms;
 
+
+/**
+ *  获取App默认所有的节奏
+ *
+ *  @return App默认所有的节奏
+ */
++ (NSArray <HDGuitarRhythmModel *>*)totalRhythms;
+
+
 /**
  * 获取一组用户自定义的节奏
  *

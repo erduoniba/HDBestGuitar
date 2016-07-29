@@ -28,13 +28,13 @@
 + (NSArray <HDGuitarChordModel *>*)defaultChords{
     NSMutableArray *chords = [NSMutableArray arrayWithCapacity:5];
     HDGuitarChordModel *model = [[HDGuitarChordModel alloc] init];
-    model.chordName = @"G";
-    model.chordGrades = @[@3, @0, @0, @0, @2, @3];
+    model.chordName = @"Am";
+    model.chordGrades = @[@0, @1, @2, @2, @0, @0];
     [chords addObject:model];
     
     model = [[HDGuitarChordModel alloc] init];
     model.chordName = @"C";
-    model.chordGrades = @[@0, @1, @0, @2, @3, @3];
+    model.chordGrades = @[@0, @1, @0, @2, @3, @0];
     [chords addObject:model];
     
     model = [[HDGuitarChordModel alloc] init];
@@ -43,13 +43,104 @@
     [chords addObject:model];
     
     model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"F";
+    model.chordGrades = @[@1, @1, @2, @3, @3, @1];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"G";
+    model.chordGrades = @[@3, @0, @0, @0, @2, @3];
+    [chords addObject:model];
+    
+    return chords;
+}
+
+/**
+ * 获取系统默认所有的和弦
+ *
+ *  @return 系统默认所有的和弦
+ */
++ (NSArray <HDGuitarChordModel *>*)totalChords{
+    NSMutableArray *chords = [NSMutableArray arrayWithCapacity:5];
+    
+    HDGuitarChordModel *model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"A7";
+    model.chordGrades = @[@0, @2, @0, @2, @0, @0];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
     model.chordName = @"Am";
     model.chordGrades = @[@0, @1, @2, @2, @0, @0];
     [chords addObject:model];
     
     model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"Am7";
+    model.chordGrades = @[@0, @1, @0, @2, @0, @0];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"C";
+    model.chordGrades = @[@0, @1, @0, @2, @3, @0];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"C7";
+    model.chordGrades = @[@0, @1, @3, @2, @3, @0];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"Cmaj7";
+    model.chordGrades = @[@0, @0, @0, @2, @3, @0];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"D7";
+    model.chordGrades = @[@2, @1, @2, @0, @0, @0];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"Dm";
+    model.chordGrades = @[@1, @3, @2, @0, @0, @0];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"Dm7";
+    model.chordGrades = @[@1, @1, @2, @0, @0, @0];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"E7";
+    model.chordGrades = @[@0, @3, @1, @2, @2, @0];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"Em";
+    model.chordGrades = @[@0, @0, @0, @2, @2, @0];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
     model.chordName = @"F";
     model.chordGrades = @[@1, @1, @2, @3, @3, @1];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"F6";
+    model.chordGrades = @[@1, @3, @2, @3, @3, @1];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"Fmaj7";
+    model.chordGrades = @[@0, @1, @2, @3, @0, @0];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"G";
+    model.chordGrades = @[@3, @0, @0, @0, @2, @3];
+    [chords addObject:model];
+    
+    model = [[HDGuitarChordModel alloc] init];
+    model.chordName = @"G7";
+    model.chordGrades = @[@1, @0, @0, @0, @2, @3];
     [chords addObject:model];
     
     return chords;
