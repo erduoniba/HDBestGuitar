@@ -22,6 +22,7 @@
 		04334A581D2F7A7C0002FBEF /* buts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04334A551D2F7A7C0002FBEF /* buts@2x.png */; };
 		04334A5B1D2F7C170002FBEF /* HDGuitarRhythmView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04334A5A1D2F7C170002FBEF /* HDGuitarRhythmView.m */; };
 		04334A5D1D2FADD90002FBEF /* btn_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04334A5C1D2FADD90002FBEF /* btn_setting@2x.png */; };
+		044051711D4B83000083B941 /* HDChoiceChordRhythm.m in Sources */ = {isa = PBXBuildFile; fileRef = 044051701D4B83000083B941 /* HDChoiceChordRhythm.m */; };
 		045100A61D2CACF2007B1E5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 045100A51D2CACF2007B1E5F /* main.m */; };
 		045100A91D2CACF2007B1E5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 045100A81D2CACF2007B1E5F /* AppDelegate.m */; };
 		045100B11D2CACF3007B1E5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045100B01D2CACF3007B1E5F /* Assets.xcassets */; };
@@ -93,6 +94,8 @@
 		04334A591D2F7C170002FBEF /* HDGuitarRhythmView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDGuitarRhythmView.h; sourceTree = "<group>"; };
 		04334A5A1D2F7C170002FBEF /* HDGuitarRhythmView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDGuitarRhythmView.m; sourceTree = "<group>"; };
 		04334A5C1D2FADD90002FBEF /* btn_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_setting@2x.png"; sourceTree = "<group>"; };
+		0440516F1D4B83000083B941 /* HDChoiceChordRhythm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDChoiceChordRhythm.h; sourceTree = "<group>"; };
+		044051701D4B83000083B941 /* HDChoiceChordRhythm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDChoiceChordRhythm.m; sourceTree = "<group>"; };
 		045100A11D2CACF2007B1E5F /* HDBestGuitar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDBestGuitar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045100A51D2CACF2007B1E5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		045100A71D2CACF2007B1E5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 			children = (
 				0400D88C1D2E3F7D00479A9D /* HDMainViewController.h */,
 				0400D88D1D2E3F7D00479A9D /* HDMainViewController.m */,
+				0440516F1D4B83000083B941 /* HDChoiceChordRhythm.h */,
+				044051701D4B83000083B941 /* HDChoiceChordRhythm.m */,
 				0400D88F1D2E3F9700479A9D /* HDMainView */,
 			);
 			path = HDMainVC;
@@ -549,6 +554,7 @@
 			files = (
 				0400D8921D2E41E600479A9D /* HDGuitarCordView.m in Sources */,
 				D90285271D33ED2D00C0F737 /* HDMidiPlayAssist.m in Sources */,
+				044051711D4B83000083B941 /* HDChoiceChordRhythm.m in Sources */,
 				D96BEFD71D2D5105008B74F8 /* UIDevice+HDCategory.m in Sources */,
 				D96BEFBA1D2D495F008B74F8 /* HDImageAssist.m in Sources */,
 				045100A91D2CACF2007B1E5F /* AppDelegate.m in Sources */,
