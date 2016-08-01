@@ -98,16 +98,24 @@
  *  @return App默认所有的节奏
  */
 + (NSArray <HDGuitarRhythmModel *>*)totalRhythms{
-    return nil;
+    return [self defaultRhythms];
 }
 
 /**
- * 获取一组用户自定义的节奏
+ * 获取一组用户自定义的节奏 (没有设置则返回默认)
  *
  *  @return 用户自定义的节奏
  */
 + (NSArray <HDGuitarRhythmModel *>*)customRhythms{
-    return [HDCustomCache getArrayCache:HDGUITAR_CUSTOMRHYTHMS];
+    if ([[[NSUserDefaults standardUserDefaults] dictionaryRepresentation].allKeys containsObject:HDGUITAR_CUSTOMRHYTHMS]) {
+        NSArray *rhythms = [HDCustomCache getArrayCache:HDGUITAR_CUSTOMRHYTHMS];
+        if (!rhythms || rhythms.count == 0) {
+            return [self defaultRhythms];
+        }
+        return rhythms;
+    }
+    
+    return [self defaultRhythms];
 }
 
 /**

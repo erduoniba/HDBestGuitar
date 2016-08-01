@@ -24,6 +24,7 @@
 @property (nonatomic, strong) NSArray   *chordGrades;
 
 
+
 /**
  * 获取一组默认的和弦 G、C、Em、Am、F
  *
@@ -39,7 +40,7 @@
 + (NSArray <HDGuitarChordModel *>*)totalChords;
 
 /**
- * 获取一组用户自定义的和弦
+ * 获取一组用户自定义的和弦 (没有设置则返回默认)
  *
  *  @return 用户自定义的和弦
  */

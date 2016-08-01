@@ -18,6 +18,8 @@
  */
 @property (nonatomic, copy) void (^ midiPlayCordGradeHandle)(NSArray *cords, NSArray *grades);
 
+@property (nonatomic, strong) NSArray   *selectGrades;   //选择的和弦品位组
+
 /**
  *  需要使用单例类来管理 midi 播放，因为需要播放，也需要停止播放
  *

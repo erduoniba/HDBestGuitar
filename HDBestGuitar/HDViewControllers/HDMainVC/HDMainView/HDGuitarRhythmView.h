@@ -14,6 +14,13 @@
 @protocol HDGuitarRhythmViewDelegate <NSObject>
 
 /**
+ *  进入设置，选择和弦和节奏
+ *
+ *  @param rhythmView 
+ */
+- (void)hdGuitarRhythmViewSetAction:(HDGuitarRhythmView *)rhythmView;
+
+/**
  *  选择开始右手节奏
  *
  *  @param rhythmView

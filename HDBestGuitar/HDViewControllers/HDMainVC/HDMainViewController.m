@@ -20,6 +20,7 @@
 #import "HDGuitarChordView.h"
 #import "HDGuitarChordModel.h"
 #import "HDGuitarRhythmModel.h"
+#import "HDChoiceChordRhythm.h"
 
 
 @interface HDMainViewController () <HDGuitarCordViewDelegate, HDGuitarRhythmViewDelegate, HDGuitarChordViewDelegate>
@@ -52,12 +53,12 @@ PROPERTY_STRONG NSArray             *selectGrades;   //选择的和弦品位组
     [self.view addSubview:_guitarCordView];
     
     _guitarRhythmView = [[HDGuitarRhythmView alloc] initWithFrame:CGRectMake(self.view.frameSizeWidth - 91, 0, 81, self.view.frameSizeHeight)];
-    _guitarRhythmView.rhythms = [HDGuitarRhythmModel defaultRhythms];
+    _guitarRhythmView.rhythms = [HDGuitarRhythmModel customRhythms];
     _guitarRhythmView.delegate = self;
     [self.view addSubview:_guitarRhythmView];
     
     _guitarChordView = [[HDGuitarChordView alloc] initWithFrame:CGRectMake(20, 0, 81, self.view.frameSizeHeight)];
-    _guitarChordView.chords = [HDGuitarChordModel defaultChords];
+    _guitarChordView.chords = [HDGuitarChordModel customChords];
     _guitarChordView.delegate = self;
     [self.view addSubview:_guitarChordView];
 }
@@ -83,6 +84,18 @@ PROPERTY_STRONG NSArray             *selectGrades;   //选择的和弦品位组
 }
 
 #pragma mark - HDGuitarRhythmViewDelegate
+- (void)hdGuitarRhythmViewSetAction:(HDGuitarRhythmView *)rhythmView{
+    HDChoiceChordRhythm *choiceCRVC = [HDChoiceChordRhythm new];
+    choiceCRVC.choiceChords = ^(NSArray *chords){
+        
+    };
+    choiceCRVC.choiceRhythms = ^(NSArray *rhythms){
+        
+    };
+    choiceCRVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:choiceCRVC animated:YES completion:nil];
+}
+
 - (void)hdGuitarRhythmView:(HDGuitarRhythmView *)rhythmView touchBeginRhythmModel:(HDGuitarRhythmModel *)rhythm{
     [self.midiPlayAssist playGuitarAtCords:rhythm.rhythmCords grades:_selectGrades intervals:rhythm.rhythmIntervals];
 }
@@ -94,6 +107,7 @@ PROPERTY_STRONG NSArray             *selectGrades;   //选择的和弦品位组
 #pragma mark - HDGuitarChordViewDelegate
 - (void)hdGuitarChordView:(HDGuitarChordView *)guitarChordView grades:(NSArray *)grades{
     _selectGrades = grades;
+    self.midiPlayAssist.selectGrades = _selectGrades;
 }
 
 - (void)didReceiveMemoryWarning {

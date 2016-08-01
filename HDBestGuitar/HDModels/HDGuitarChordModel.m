@@ -147,12 +147,21 @@
 }
 
 /**
- * 获取一组用户自定义的和弦
+ * 获取一组用户自定义的和弦 (没有设置则返回默认)
  *
  *  @return 用户自定义的和弦
  */
 + (NSArray <HDGuitarChordModel *>*)customChords{
-    return [HDCustomCache getArrayCache:HDGUITAR_CUSTOMCHORDS];
+    if ([[[NSUserDefaults standardUserDefaults] dictionaryRepresentation].allKeys containsObject:HDGUITAR_CUSTOMCHORDS]) {
+        NSArray *chords = [HDCustomCache getArrayCache:HDGUITAR_CUSTOMCHORDS];
+        if (!chords || chords.count == 0) {
+            return [self defaultChords];
+        }
+        return chords;
+        
+    }
+    
+    return [self defaultChords];
 }
 
 /**

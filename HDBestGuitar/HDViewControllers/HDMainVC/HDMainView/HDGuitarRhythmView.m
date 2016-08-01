@@ -61,7 +61,9 @@
 }
 
 - (void)rhythmActionSet{
-    
+    if (_delegate && [_delegate respondsToSelector:@selector(hdGuitarRhythmViewSetAction:)]) {
+        [_delegate hdGuitarRhythmViewSetAction:self];
+    }
 }
 
 - (void)rhythmActionBegin:(UIButton *)rhythmBt{

@@ -83,6 +83,9 @@
     return _guiterNodes;
 }
 
+- (void)setSelectGrades:(NSArray *)selectGrades{
+    _selectGrades = selectGrades;
+}
 
 
 #pragma mark - 播放midi方法
@@ -216,6 +219,7 @@
  *  @param repeat    是否需要重复播放 (默认是重复播放)
  */
 - (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades intervals:(NSArray *)intervals repeat:(BOOL)repeat{
+    _selectGrades = grades;
     NSInteger cord = [cords[0] integerValue]; //第几弦
     NSInteger grade = [grades[cord-1] integerValue]; //第几弦对应的品位
     [self playGuitarAtCord:cord grade:grade];
@@ -231,14 +235,13 @@
             //从 本组的 第0个 midi重新开始播放，和上一个midi的时间间隔为 intervals的最后时间
             _guitarGroupInfo = @{
                                  @"cords"     : cords,
-                                 @"grades"    : grades,
                                  @"intervals" : intervals,
                                  @"index"     : @(0),
                                  @"repeat"    : @(repeat)
                                  };
             // 因为在播放midi的时候，同步进行, 使用 performSelector 不需要耗时, 就是这么严谨
             [self performSelector:@selector(recursionPlayMidi:) withObject:_guitarGroupInfo afterDelay:([[intervals lastObject] floatValue])];
-            
+         
         }
         
         return ;
@@ -255,7 +258,6 @@
     
     _guitarGroupInfo = @{
                          @"cords"     : cords,
-                         @"grades"    : grades,
                          @"intervals" : intervals,
                          @"index"     : @(index),
                          @"repeat"    : @(repeat)
@@ -266,14 +268,13 @@
 
 - (void)recursionPlayMidi:(NSDictionary *)info1{
     NSArray *cords = _guitarGroupInfo[@"cords"];
-    NSArray *grades = _guitarGroupInfo[@"grades"];
     NSArray *intervals = _guitarGroupInfo[@"intervals"];
     NSInteger index = [_guitarGroupInfo[@"index"] integerValue];
     BOOL repeat = [_guitarGroupInfo[@"repeat"] boolValue];
     NSInteger cord = [cords[index] integerValue];
-    NSInteger grade = [grades[cord-1] integerValue];
+    NSInteger grade = [_selectGrades[cord-1] integerValue];
     [self playGuitarAtCord:cord grade:grade];
-    [self playGuitarAtCords:cords grades:grades intervals:intervals index:index+1 repeat:repeat];
+    [self playGuitarAtCords:cords grades:_selectGrades intervals:intervals index:index+1 repeat:repeat];
 }
 
 @end

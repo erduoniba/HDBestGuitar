@@ -10,4 +10,7 @@
 
 @interface HDChoiceChordRhythm : HDBaseViewController
 
+@property (nonatomic, copy) void (^ choiceChords)(NSArray *chords);
+@property (nonatomic, copy) void (^ choiceRhythms)(NSArray *rhythms);
+
 @end

@@ -37,6 +37,7 @@
 		045C96FE1D38920500535972 /* btn_accord@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045C96FD1D38920500535972 /* btn_accord@2x.png */; };
 		045C97011D38A64300535972 /* HDGuitarChordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C97001D38A64300535972 /* HDGuitarChordView.m */; };
 		045C97051D38BC9C00535972 /* HDGuitarChordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C97041D38BC9C00535972 /* HDGuitarChordModel.m */; };
+		0481B5D41D4F1FCB0076755F /* ico_btn_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0481B5D31D4F1FCB0076755F /* ico_btn_back@2x.png */; };
 		20F92D832DB3C3AD442C04BC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D75B61A34E665EF3F996C8 /* libPods.a */; };
 		638BE35BDA9B6AF569483EC7 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FC53291ECD67A510C7CE2546 /* libstdc++.tbd */; };
 		7AB1AEAB37ED7491DD51224D /* Rollout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E5D24D097F8DF13D842B6D /* Rollout.framework */; };
@@ -50,12 +51,6 @@
 		D96BEFC51D2D4D47008B74F8 /* bg_chordsmode_black_P4@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96BEFC21D2D4D47008B74F8 /* bg_chordsmode_black_P4@2x.jpg */; };
 		D96BEFC61D2D4D47008B74F8 /* bg_chordsmode_black_P6@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96BEFC31D2D4D47008B74F8 /* bg_chordsmode_black_P6@2x.jpg */; };
 		D96BEFC71D2D4D47008B74F8 /* bg_chordsmode_black_P6P@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96BEFC41D2D4D47008B74F8 /* bg_chordsmode_black_P6P@3x.jpg */; };
-		D96BEFCB1D2D4D73008B74F8 /* bg_solo_first_black_P4@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96BEFC81D2D4D73008B74F8 /* bg_solo_first_black_P4@2x.jpg */; };
-		D96BEFCC1D2D4D73008B74F8 /* bg_solo_first_black_P6@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96BEFC91D2D4D73008B74F8 /* bg_solo_first_black_P6@2x.jpg */; };
-		D96BEFCD1D2D4D73008B74F8 /* bg_solo_first_black_P6P@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96BEFCA1D2D4D73008B74F8 /* bg_solo_first_black_P6P@3x.jpg */; };
-		D96BEFD11D2D4D95008B74F8 /* bg_solo_left_P4@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96BEFCE1D2D4D95008B74F8 /* bg_solo_left_P4@2x.jpg */; };
-		D96BEFD21D2D4D95008B74F8 /* bg_solo_left_P6@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96BEFCF1D2D4D95008B74F8 /* bg_solo_left_P6@2x.jpg */; };
-		D96BEFD31D2D4D95008B74F8 /* bg_solo_left_P6P@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D96BEFD01D2D4D95008B74F8 /* bg_solo_left_P6P@3x.jpg */; };
 		D96BEFD71D2D5105008B74F8 /* UIDevice+HDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D96BEFD61D2D5105008B74F8 /* UIDevice+HDCategory.m */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +109,7 @@
 		045C97001D38A64300535972 /* HDGuitarChordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDGuitarChordView.m; sourceTree = "<group>"; };
 		045C97031D38BC9C00535972 /* HDGuitarChordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDGuitarChordModel.h; sourceTree = "<group>"; };
 		045C97041D38BC9C00535972 /* HDGuitarChordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDGuitarChordModel.m; sourceTree = "<group>"; };
+		0481B5D31D4F1FCB0076755F /* ico_btn_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_btn_back@2x.png"; sourceTree = "<group>"; };
 		42E5D24D097F8DF13D842B6D /* Rollout.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Rollout.framework; path = "Rollout-ios-SDK/Rollout/Rollout.framework"; sourceTree = "<group>"; };
 		56836D00D0D0CD97E5DC731D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		60780EC9BEF52780F54A4880 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,12 +127,6 @@
 		D96BEFC21D2D4D47008B74F8 /* bg_chordsmode_black_P4@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg_chordsmode_black_P4@2x.jpg"; sourceTree = "<group>"; };
 		D96BEFC31D2D4D47008B74F8 /* bg_chordsmode_black_P6@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg_chordsmode_black_P6@2x.jpg"; sourceTree = "<group>"; };
 		D96BEFC41D2D4D47008B74F8 /* bg_chordsmode_black_P6P@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg_chordsmode_black_P6P@3x.jpg"; sourceTree = "<group>"; };
-		D96BEFC81D2D4D73008B74F8 /* bg_solo_first_black_P4@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg_solo_first_black_P4@2x.jpg"; sourceTree = "<group>"; };
-		D96BEFC91D2D4D73008B74F8 /* bg_solo_first_black_P6@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg_solo_first_black_P6@2x.jpg"; sourceTree = "<group>"; };
-		D96BEFCA1D2D4D73008B74F8 /* bg_solo_first_black_P6P@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg_solo_first_black_P6P@3x.jpg"; sourceTree = "<group>"; };
-		D96BEFCE1D2D4D95008B74F8 /* bg_solo_left_P4@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg_solo_left_P4@2x.jpg"; sourceTree = "<group>"; };
-		D96BEFCF1D2D4D95008B74F8 /* bg_solo_left_P6@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg_solo_left_P6@2x.jpg"; sourceTree = "<group>"; };
-		D96BEFD01D2D4D95008B74F8 /* bg_solo_left_P6P@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg_solo_left_P6P@3x.jpg"; sourceTree = "<group>"; };
 		D96BEFD51D2D5105008B74F8 /* UIDevice+HDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+HDCategory.h"; sourceTree = "<group>"; };
 		D96BEFD61D2D5105008B74F8 /* UIDevice+HDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+HDCategory.m"; sourceTree = "<group>"; };
 		FC53291ECD67A510C7CE2546 /* libstdc++.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
@@ -313,18 +303,13 @@
 		D96BEFBB1D2D4BE8008B74F8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0481B5D31D4F1FCB0076755F /* ico_btn_back@2x.png */,
 				D96BEFBC1D2D4BEF008B74F8 /* bg_chordsmode_P4@2x.jpg */,
 				D96BEFBE1D2D4C31008B74F8 /* bg_chordsmode_P6@2x.jpg */,
 				D96BEFC01D2D4C4D008B74F8 /* bg_chordsmode_P6P@3x.jpg */,
 				D96BEFC21D2D4D47008B74F8 /* bg_chordsmode_black_P4@2x.jpg */,
 				D96BEFC31D2D4D47008B74F8 /* bg_chordsmode_black_P6@2x.jpg */,
 				D96BEFC41D2D4D47008B74F8 /* bg_chordsmode_black_P6P@3x.jpg */,
-				D96BEFC81D2D4D73008B74F8 /* bg_solo_first_black_P4@2x.jpg */,
-				D96BEFC91D2D4D73008B74F8 /* bg_solo_first_black_P6@2x.jpg */,
-				D96BEFCA1D2D4D73008B74F8 /* bg_solo_first_black_P6P@3x.jpg */,
-				D96BEFCE1D2D4D95008B74F8 /* bg_solo_left_P4@2x.jpg */,
-				D96BEFCF1D2D4D95008B74F8 /* bg_solo_left_P6@2x.jpg */,
-				D96BEFD01D2D4D95008B74F8 /* bg_solo_left_P6P@3x.jpg */,
 				0400D8771D2DF40E00479A9D /* cord1@2x.png */,
 				0400D8781D2DF40E00479A9D /* cord2@2x.png */,
 				0400D8791D2DF40E00479A9D /* cord3@2x.png */,
@@ -427,10 +412,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0481B5D41D4F1FCB0076755F /* ico_btn_back@2x.png in Resources */,
 				045C96FC1D3891FC00535972 /* btn_accord_press@2x.png in Resources */,
 				04334A5D1D2FADD90002FBEF /* btn_setting@2x.png in Resources */,
-				D96BEFD21D2D4D95008B74F8 /* bg_solo_left_P6@2x.jpg in Resources */,
-				D96BEFD31D2D4D95008B74F8 /* bg_solo_left_P6P@3x.jpg in Resources */,
 				045100B11D2CACF3007B1E5F /* Assets.xcassets in Resources */,
 				0400D8811D2DF40E00479A9D /* cord5@2x.png in Resources */,
 				04334A571D2F7A7C0002FBEF /* buts_press@2x.png in Resources */,
@@ -445,11 +429,7 @@
 				D96BEFC11D2D4C4D008B74F8 /* bg_chordsmode_P6P@3x.jpg in Resources */,
 				D96BEFC51D2D4D47008B74F8 /* bg_chordsmode_black_P4@2x.jpg in Resources */,
 				0400D8821D2DF40E00479A9D /* cord6@2x.png in Resources */,
-				D96BEFD11D2D4D95008B74F8 /* bg_solo_left_P4@2x.jpg in Resources */,
-				D96BEFCC1D2D4D73008B74F8 /* bg_solo_first_black_P6@2x.jpg in Resources */,
-				D96BEFCB1D2D4D73008B74F8 /* bg_solo_first_black_P4@2x.jpg in Resources */,
 				04334A561D2F7A7C0002FBEF /* buts_icon@2x.png in Resources */,
-				D96BEFCD1D2D4D73008B74F8 /* bg_solo_first_black_P6P@3x.jpg in Resources */,
 				0400D87F1D2DF40E00479A9D /* cord3@2x.png in Resources */,
 				D96BEFBD1D2D4BEF008B74F8 /* bg_chordsmode_P4@2x.jpg in Resources */,
 				D96BEFC61D2D4D47008B74F8 /* bg_chordsmode_black_P6@2x.jpg in Resources */,
