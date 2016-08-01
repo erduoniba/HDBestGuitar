@@ -386,6 +386,7 @@
 				TargetAttributes = {
 					045100A01D2CACF2007B1E5F = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = HQ353LFGTA;
 					};
 				};
 			};
@@ -639,6 +640,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Libing Deng (2S9LL953XD)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib",
@@ -653,6 +655,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harry.HDBestGuitar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f698b2c9-7578-4c13-b597-cc050fd476ff";
 			};
 			name = Debug;
 		};
@@ -662,6 +665,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib",

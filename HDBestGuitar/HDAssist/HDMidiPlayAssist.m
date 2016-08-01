@@ -221,8 +221,17 @@
 - (void)playGuitarAtCords:(NSArray *)cords grades:(NSArray *)grades intervals:(NSArray *)intervals repeat:(BOOL)repeat{
     _selectGrades = grades;
     NSInteger cord = [cords[0] integerValue]; //第几弦
-    NSInteger grade = [grades[cord-1] integerValue]; //第几弦对应的品位
-    [self playGuitarAtCord:cord grade:grade];
+    if (cord < 7) {
+        //正常情况下的弦
+        NSInteger grade = [grades[cord-1] integerValue]; //第几弦对应的品位
+        [self playGuitarAtCord:cord grade:grade];
+    }
+    else {
+        //弦数大于6，比如432表示同时按下432弦
+        NSArray *notes = [self parseCords:cord grades:grades];
+        [self playMidiNotes:notes];
+    }
+
     [self playGuitarAtCords:cords grades:grades intervals:intervals index:1 repeat:repeat];
 }
 
@@ -272,9 +281,42 @@
     NSInteger index = [_guitarGroupInfo[@"index"] integerValue];
     BOOL repeat = [_guitarGroupInfo[@"repeat"] boolValue];
     NSInteger cord = [cords[index] integerValue];
-    NSInteger grade = [_selectGrades[cord-1] integerValue];
-    [self playGuitarAtCord:cord grade:grade];
+    
+    if (cord < 7) {
+        //正常情况下的弦
+        NSInteger grade = [_selectGrades[cord-1] integerValue]; //第几弦对应的品位
+        [self playGuitarAtCord:cord grade:grade];
+    }
+    else {
+        //弦数大于6，比如432表示同时按下432弦
+        NSArray *notes = [self parseCords:cord grades:_selectGrades];
+        [self playMidiNotes:notes];
+    }
+    
     [self playGuitarAtCords:cords grades:_selectGrades intervals:intervals index:index+1 repeat:repeat];
+}
+
+
+- (NSArray <NSNumber *>*)parseCords:(NSInteger)cords grades:(NSArray *)grades{
+    
+    NSMutableArray *notes = [NSMutableArray arrayWithCapacity:6];
+    NSInteger cord = cords % 10;  //获取432中2，2表示第二弦
+
+    for (int i=0; i<6; i++) {
+        if (cord > 0) {
+            NSInteger grade = [grades[cord-1] integerValue]; //第几弦对应的品位
+            NSUInteger note = [self.guiterNodes[cord - 1][grade] unsignedIntegerValue];
+            
+            if (_midiPlayCordGradeHandle) {
+                _midiPlayCordGradeHandle(@[[NSNumber numberWithInteger:cord]], @[[NSNumber numberWithInteger:grade]]);
+            }
+            
+            [notes addObject:@(note)];
+        }
+        cord = cords % (int)(pow(10, i+2)) / (int)(pow(10, i+1));
+    }
+    
+    return notes;
 }
 
 @end

@@ -66,27 +66,26 @@
     
     model = [[HDGuitarRhythmModel alloc] init];
     model.rhythmName = @"654321  654321 123456 654321 123456 654321 123456";
-    model.rhythmCords = @[@6, @5, @4, @3, @2, @1,
+    model.rhythmCords = @[
                           @6, @5, @4, @3, @2, @1,
                           @1, @2, @3, @4, @5, @6,
+                          @4321, //这个表示同时按下654弦
                           @6, @5, @4, @3, @2, @1,
                           @1, @2, @3, @4, @5, @6,
-                          @6, @5, @4, @3, @2, @1,
-                          @1, @2, @3, @4, @5, @6];
-    model.rhythmIntervals = @[@(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval),
-                              @0.4,
-                              @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval),
-                              @0.15,
-                              @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval),
-                              @0.15,
-                              @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval),
-                              @0.15,
+                          @4321 //这个表示同时按下654弦
+                          ];
+    model.rhythmIntervals = @[
                               @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval),
                               @0.25,
                               @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval),
-                              @0.15,
+                              @0.25,
+                              @0.5,
                               @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval),
-                              @0.25];
+                              @0.25,
+                              @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval), @(defaultStrumInterval),
+                              @0.25,
+                              @0.5
+                              ];
     [rhythms addObject:model];
     
     return rhythms;
@@ -107,15 +106,11 @@
  *  @return 用户自定义的节奏
  */
 + (NSArray <HDGuitarRhythmModel *>*)customRhythms{
-    if ([[[NSUserDefaults standardUserDefaults] dictionaryRepresentation].allKeys containsObject:HDGUITAR_CUSTOMRHYTHMS]) {
-        NSArray *rhythms = [HDCustomCache getArrayCache:HDGUITAR_CUSTOMRHYTHMS];
-        if (!rhythms || rhythms.count == 0) {
-            return [self defaultRhythms];
-        }
-        return rhythms;
+    NSArray *rhythms = [HDCustomCache getArrayCache:HDGUITAR_CUSTOMRHYTHMS];
+    if (!rhythms || rhythms.count == 0) {
+        return [self defaultRhythms];
     }
-    
-    return [self defaultRhythms];
+    return rhythms;
 }
 
 /**

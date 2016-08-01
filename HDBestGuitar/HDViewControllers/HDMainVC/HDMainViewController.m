@@ -86,11 +86,14 @@ PROPERTY_STRONG NSArray             *selectGrades;   //选择的和弦品位组
 #pragma mark - HDGuitarRhythmViewDelegate
 - (void)hdGuitarRhythmViewSetAction:(HDGuitarRhythmView *)rhythmView{
     HDChoiceChordRhythm *choiceCRVC = [HDChoiceChordRhythm new];
+    @weakify(self);
     choiceCRVC.choiceChords = ^(NSArray *chords){
-        
+        @strongify(self);
+        self.guitarChordView.chords = chords;
     };
     choiceCRVC.choiceRhythms = ^(NSArray *rhythms){
-        
+        @strongify(self);
+        self.guitarRhythmView.rhythms = rhythms;
     };
     choiceCRVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:choiceCRVC animated:YES completion:nil];

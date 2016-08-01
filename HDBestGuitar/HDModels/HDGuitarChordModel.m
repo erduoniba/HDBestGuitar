@@ -152,16 +152,11 @@
  *  @return 用户自定义的和弦
  */
 + (NSArray <HDGuitarChordModel *>*)customChords{
-    if ([[[NSUserDefaults standardUserDefaults] dictionaryRepresentation].allKeys containsObject:HDGUITAR_CUSTOMCHORDS]) {
-        NSArray *chords = [HDCustomCache getArrayCache:HDGUITAR_CUSTOMCHORDS];
-        if (!chords || chords.count == 0) {
-            return [self defaultChords];
-        }
-        return chords;
-        
+    NSArray *chords = [HDCustomCache getArrayCache:HDGUITAR_CUSTOMCHORDS];
+    if (!chords || chords.count == 0) {
+        return [self defaultChords];
     }
-    
-    return [self defaultChords];
+    return chords;
 }
 
 /**

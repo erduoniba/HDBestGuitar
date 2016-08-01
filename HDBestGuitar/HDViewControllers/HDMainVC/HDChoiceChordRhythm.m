@@ -96,6 +96,9 @@
         _choiceRhythms(_rhythms);
     }
     
+    [HDGuitarChordModel saveCustomChords:_chords];
+    [HDGuitarRhythmModel saveCustomRhythms:_rhythms];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -11,7 +11,7 @@
 /**
  *  节奏实体类 如 53231323
  */
-@interface HDGuitarRhythmModel : MTLModel
+@interface HDGuitarRhythmModel : MTLModel <MTLJSONSerializing>
 
 /**
  *  节奏的名称
