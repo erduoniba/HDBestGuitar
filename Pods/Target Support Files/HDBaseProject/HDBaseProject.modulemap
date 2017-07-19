@@ -1,0 +1,6 @@
+framework module HDBaseProject {
+  umbrella header "HDBaseProject-umbrella.h"
+
+  export *
+  module * { export * }
+}
