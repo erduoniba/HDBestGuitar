@@ -28,20 +28,16 @@
 		045100B11D2CACF3007B1E5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045100B01D2CACF3007B1E5F /* Assets.xcassets */; };
 		045100C61D2CD65F007B1E5F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045100C41D2CD65F007B1E5F /* Crashlytics.framework */; };
 		045100C71D2CD65F007B1E5F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045100C51D2CD65F007B1E5F /* Fabric.framework */; };
-		045100CC1D2CD6B6007B1E5F /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045100CB1D2CD6B6007B1E5F /* CoreMIDI.framework */; };
 		045101A51D2CDAB6007B1E5F /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 045101A01D2CD799007B1E5F /* libxml2.tbd */; };
-		045101A81D2CDE0D007B1E5F /* MIKMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045101A61D2CDBC5007B1E5F /* MIKMIDI.framework */; };
-		045101AB1D2CE154007B1E5F /* MIKMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045101A61D2CDBC5007B1E5F /* MIKMIDI.framework */; };
-		045101AC1D2CE154007B1E5F /* MIKMIDI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 045101A61D2CDBC5007B1E5F /* MIKMIDI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		045C96FC1D3891FC00535972 /* btn_accord_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045C96FB1D3891FC00535972 /* btn_accord_press@2x.png */; };
 		045C96FE1D38920500535972 /* btn_accord@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045C96FD1D38920500535972 /* btn_accord@2x.png */; };
 		045C97011D38A64300535972 /* HDGuitarChordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C97001D38A64300535972 /* HDGuitarChordView.m */; };
 		045C97051D38BC9C00535972 /* HDGuitarChordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C97041D38BC9C00535972 /* HDGuitarChordModel.m */; };
 		0481B5D41D4F1FCB0076755F /* ico_btn_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0481B5D31D4F1FCB0076755F /* ico_btn_back@2x.png */; };
-		20F92D832DB3C3AD442C04BC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D75B61A34E665EF3F996C8 /* libPods.a */; };
 		638BE35BDA9B6AF569483EC7 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FC53291ECD67A510C7CE2546 /* libstdc++.tbd */; };
 		7AB1AEAB37ED7491DD51224D /* Rollout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E5D24D097F8DF13D842B6D /* Rollout.framework */; };
 		8D76F0E88BA7D207125DFBD7 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B227CD96939F24C000D38D27 /* JavaScriptCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BE42BD5FC8E76487467ED677 /* Pods_HDBestGuitar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71389E93028F98B0A0F6326 /* Pods_HDBestGuitar.framework */; };
 		D90285271D33ED2D00C0F737 /* HDMidiPlayAssist.m in Sources */ = {isa = PBXBuildFile; fileRef = D90285261D33ED2D00C0F737 /* HDMidiPlayAssist.m */; };
 		D902852A1D391EB000C0F737 /* HDGuitarRhythmModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D90285291D391EB000C0F737 /* HDGuitarRhythmModel.m */; };
 		D96BEFBA1D2D495F008B74F8 /* HDImageAssist.m in Sources */ = {isa = PBXBuildFile; fileRef = D96BEFB91D2D495F008B74F8 /* HDImageAssist.m */; };
@@ -61,7 +57,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				045101AC1D2CE154007B1E5F /* MIKMIDI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,10 +94,8 @@
 		045100B51D2CACF3007B1E5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045100C41D2CD65F007B1E5F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		045100C51D2CD65F007B1E5F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		045100CB1D2CD6B6007B1E5F /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		045101A01D2CD799007B1E5F /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		045101A21D2CD949007B1E5F /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
-		045101A61D2CDBC5007B1E5F /* MIKMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MIKMIDI.framework; sourceTree = "<group>"; };
 		045C96FB1D3891FC00535972 /* btn_accord_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_accord_press@2x.png"; sourceTree = "<group>"; };
 		045C96FD1D38920500535972 /* btn_accord@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_accord@2x.png"; sourceTree = "<group>"; };
 		045C96FF1D38A64300535972 /* HDGuitarChordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDGuitarChordView.h; sourceTree = "<group>"; };
@@ -111,10 +104,10 @@
 		045C97041D38BC9C00535972 /* HDGuitarChordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDGuitarChordModel.m; sourceTree = "<group>"; };
 		0481B5D31D4F1FCB0076755F /* ico_btn_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_btn_back@2x.png"; sourceTree = "<group>"; };
 		42E5D24D097F8DF13D842B6D /* Rollout.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Rollout.framework; path = "Rollout-ios-SDK/Rollout/Rollout.framework"; sourceTree = "<group>"; };
-		56836D00D0D0CD97E5DC731D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		60780EC9BEF52780F54A4880 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		48E6839D5D73F34ED0AD1E1E /* Pods-HDBestGuitar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDBestGuitar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDBestGuitar/Pods-HDBestGuitar.debug.xcconfig"; sourceTree = "<group>"; };
+		A57F96C0D0A00E9A10C9AE58 /* Pods-HDBestGuitar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDBestGuitar.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDBestGuitar/Pods-HDBestGuitar.release.xcconfig"; sourceTree = "<group>"; };
 		B227CD96939F24C000D38D27 /* JavaScriptCore.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		D4D75B61A34E665EF3F996C8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D71389E93028F98B0A0F6326 /* Pods_HDBestGuitar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDBestGuitar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D90285251D33ED2D00C0F737 /* HDMidiPlayAssist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDMidiPlayAssist.h; sourceTree = "<group>"; };
 		D90285261D33ED2D00C0F737 /* HDMidiPlayAssist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDMidiPlayAssist.m; sourceTree = "<group>"; };
 		D90285281D391EB000C0F737 /* HDGuitarRhythmModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDGuitarRhythmModel.h; sourceTree = "<group>"; };
@@ -138,30 +131,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				045101A51D2CDAB6007B1E5F /* libxml2.tbd in Frameworks */,
-				045100CC1D2CD6B6007B1E5F /* CoreMIDI.framework in Frameworks */,
-				20F92D832DB3C3AD442C04BC /* libPods.a in Frameworks */,
-				045101AB1D2CE154007B1E5F /* MIKMIDI.framework in Frameworks */,
-				045101A81D2CDE0D007B1E5F /* MIKMIDI.framework in Frameworks */,
 				045100C61D2CD65F007B1E5F /* Crashlytics.framework in Frameworks */,
 				7AB1AEAB37ED7491DD51224D /* Rollout.framework in Frameworks */,
 				8D76F0E88BA7D207125DFBD7 /* JavaScriptCore.framework in Frameworks */,
 				638BE35BDA9B6AF569483EC7 /* libstdc++.tbd in Frameworks */,
 				045100C71D2CD65F007B1E5F /* Fabric.framework in Frameworks */,
+				BE42BD5FC8E76487467ED677 /* Pods_HDBestGuitar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0021B233A479909123BD7CD8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				56836D00D0D0CD97E5DC731D /* Pods.debug.xcconfig */,
-				60780EC9BEF52780F54A4880 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		0400D8871D2E3DFF00479A9D /* HDViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,9 +181,9 @@
 			children = (
 				045100A31D2CACF2007B1E5F /* HDBestGuitar */,
 				045100A21D2CACF2007B1E5F /* Products */,
-				0021B233A479909123BD7CD8 /* Pods */,
 				DD75D9CE159A039F15850EFB /* Frameworks */,
 				99D5A98F8D47AD842DF4BB68 /* Rollout */,
+				D85C8C301C11499349F28F0A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -263,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				04334A4D1D2F58E30002FBEF /* GeneralUser GS MuseScore v1.442.sf2 */,
-				045101A61D2CDBC5007B1E5F /* MIKMIDI.framework */,
 			);
 			path = MIKMIDI;
 			sourceTree = "<group>";
@@ -285,6 +265,15 @@
 				42E5D24D097F8DF13D842B6D /* Rollout.framework */,
 			);
 			name = Rollout;
+			sourceTree = "<group>";
+		};
+		D85C8C301C11499349F28F0A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48E6839D5D73F34ED0AD1E1E /* Pods-HDBestGuitar.debug.xcconfig */,
+				A57F96C0D0A00E9A10C9AE58 /* Pods-HDBestGuitar.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		D96BEFB71D2D4938008B74F8 /* HDAssist */ = {
@@ -340,10 +329,9 @@
 			children = (
 				045101A21D2CD949007B1E5F /* libxml2.2.tbd */,
 				045101A01D2CD799007B1E5F /* libxml2.tbd */,
-				045100CB1D2CD6B6007B1E5F /* CoreMIDI.framework */,
-				D4D75B61A34E665EF3F996C8 /* libPods.a */,
 				B227CD96939F24C000D38D27 /* JavaScriptCore.framework */,
 				FC53291ECD67A510C7CE2546 /* libstdc++.tbd */,
+				D71389E93028F98B0A0F6326 /* Pods_HDBestGuitar.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -355,16 +343,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 045100B81D2CACF3007B1E5F /* Build configuration list for PBXNativeTarget "HDBestGuitar" */;
 			buildPhases = (
+				689D450486148934389AA70C /* [CP] Check Pods Manifest.lock */,
 				1134BB0ECB1B268D6ABD9C97 /* Rollout.io pre-build */,
-				1F65260D37BBECB1CBD0C998 /* Check Pods Manifest.lock */,
 				0451009D1D2CACF2007B1E5F /* Sources */,
 				0451009E1D2CACF2007B1E5F /* Frameworks */,
 				0451009F1D2CACF2007B1E5F /* Resources */,
-				6C3B9F0D72349E4C02A3483A /* Embed Pods Frameworks */,
-				5FC074B2BFF39A9218FEDE97 /* Copy Pods Resources */,
 				045100BD1D2CB412007B1E5F /* ShellScript */,
 				AE7E4903B8A711B6293131B1 /* Rollout.io post-build */,
 				045101AD1D2CE154007B1E5F /* Embed Frameworks */,
+				6DDD214B11A9BF1A69FDA8F3 /* [CP] Embed Pods Frameworks */,
+				26886A24CCFEB62EEFA1DE01 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -386,7 +374,7 @@
 				TargetAttributes = {
 					045100A01D2CACF2007B1E5F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = HQ353LFGTA;
+						DevelopmentTeam = B9FH944VTE;
 					};
 				};
 			};
@@ -467,49 +455,49 @@
 			shellPath = /bin/sh;
 			shellScript = "ROLLOUT_lastXcodeprojConfiguration=6 \"${SRCROOT}/Rollout-ios-SDK/lib/pre-build_xcode_phase\"";
 		};
-		1F65260D37BBECB1CBD0C998 /* Check Pods Manifest.lock */ = {
+		26886A24CCFEB62EEFA1DE01 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDBestGuitar/Pods-HDBestGuitar-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5FC074B2BFF39A9218FEDE97 /* Copy Pods Resources */ = {
+		689D450486148934389AA70C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6C3B9F0D72349E4C02A3483A /* Embed Pods Frameworks */ = {
+		6DDD214B11A9BF1A69FDA8F3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDBestGuitar/Pods-HDBestGuitar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AE7E4903B8A711B6293131B1 /* Rollout.io post-build */ = {
@@ -636,50 +624,77 @@
 		};
 		045100B91D2CACF3007B1E5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56836D00D0D0CD97E5DC731D /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 48E6839D5D73F34ED0AD1E1E /* Pods-HDBestGuitar.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Libing Deng (2S9LL953XD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: fenglong zhou (7PA27J75AS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: fenglong zhou (7PA27J75AS)";
+				DEVELOPMENT_TEAM = B9FH944VTE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib",
 					"Rollout-ios-SDK/Rollout",
 					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib/Fabric",
-					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib/MIKMIDI",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HDBestGuitar/HDBestGuitar.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/HDBaseProject\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/Mantle\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+				);
 				INFOPLIST_FILE = HDBestGuitar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harry.HDBestGuitar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f698b2c9-7578-4c13-b597-cc050fd476ff";
+				PROVISIONING_PROFILE = "0380381a-fdcd-469a-aa10-4e4e245f46f5";
+				PROVISIONING_PROFILE_SPECIFIER = wildcard_dev;
 			};
 			name = Debug;
 		};
 		045100BA1D2CACF3007B1E5F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60780EC9BEF52780F54A4880 /* Pods.release.xcconfig */;
+			baseConfigurationReference = A57F96C0D0A00E9A10C9AE58 /* Pods-HDBestGuitar.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = B9FH944VTE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib",
 					"Rollout-ios-SDK/Rollout",
 					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib/Fabric",
-					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib/MIKMIDI",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HDBestGuitar/HDBestGuitar.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/HDBaseProject\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/Mantle\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+				);
 				INFOPLIST_FILE = HDBestGuitar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harry.HDBestGuitar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "80dc88b6-91ac-4ef1-98ec-97114362988d";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: *";
 			};
 			name = Release;
 		};

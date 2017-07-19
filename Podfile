@@ -1,6 +1,10 @@
-platform :ios, '7.0'
-
+platform :ios, '8.0'
+use_frameworks!
 inhibit_all_warnings!
-pod 'HDBaseProject'
-pod 'MBProgressHUD'
-pod 'Mantle'
+
+target 'HDBestGuitar' do
+    pod 'HDBaseProject'
+    pod 'MBProgressHUD'
+    pod 'Mantle'
+    pod 'MIKMIDI'
+end

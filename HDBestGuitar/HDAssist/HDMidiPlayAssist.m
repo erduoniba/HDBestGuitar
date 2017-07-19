@@ -51,9 +51,12 @@
         _synthesizer = [[MIKMIDISynthesizer alloc] init];
         NSURL *soundfont = [[NSBundle mainBundle] URLForResource:@"GeneralUser GS MuseScore v1.442" withExtension:@"sf2"];
         NSError *error = nil;
-        if (![_synthesizer loadSoundfontFromFileAtURL:soundfont presetID:27 error:&error]) {
+        if (![_synthesizer loadSoundfontFromFileAtURL:soundfont error:&error]) {
             NSLog(@"Error loading soundfont for synthesizer. Sound will be degraded. %@", error);
         }
+//        if (![_synthesizer loadSoundfontFromFileAtURL:soundfont presetID:27 error:&error]) {
+//            NSLog(@"Error loading soundfont for synthesizer. Sound will be degraded. %@", error);
+//        }
     }
     return _synthesizer;
 }
