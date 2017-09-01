@@ -96,7 +96,9 @@
                 image = placeholderImage;
             }
             else{
-                [[SDImageCache sharedImageCache] storeImage:image forKey:url.absoluteString toDisk:YES];
+                [[SDImageCache sharedImageCache] storeImage:image forKey:url.absoluteString toDisk:YES completion:^{
+
+                }];
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{

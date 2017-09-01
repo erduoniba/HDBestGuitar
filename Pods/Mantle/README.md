@@ -382,6 +382,8 @@ deserializing from JSON.
 }
 ```
 
+`key` is the key that applies to your model object; not the original JSON key. Keep this in mind if you transform the key names using `+JSONKeyPathsByPropertyKey`.
+
 For added convenience, if you implement `+<key>JSONTransformer`,
 `MTLJSONAdapter` will use the result of that method instead. For example, dates
 that are commonly represented as strings in JSON can be transformed to `NSDate`s
@@ -477,7 +479,7 @@ Mantle supports OS X 10.9+ and iOS 8.0+.
 To add Mantle to your application:
 
  1. Add the Mantle repository as a submodule of your application's repository.
- 1. Run `script/bootstrap` from within the Mantle folder.
+ 1. Run `git submodule update --init --recursive` from within the Mantle folder.
  1. Drag and drop `Mantle.xcodeproj` into your application's Xcode project. Unfortunately, an [Xcode bug](http://www.openradar.appspot.com/19676555) means you should probably not add it to a workspace.
  1. On the "General" tab of your application target, add `Mantle.framework` to the "Embedded Binaries".
 

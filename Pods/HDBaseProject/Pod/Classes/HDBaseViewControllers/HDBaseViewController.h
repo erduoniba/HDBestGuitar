@@ -10,6 +10,8 @@
 
 @class AppDelegate;
 
+@class HDHTTPSessionRequest;
+
 @protocol HarryViewControllerDelegate <NSObject>
 
 @optional
@@ -46,6 +48,11 @@
  *  广义级别的通知,当我们需要和另一个VC进行交互时候,可以执行此协议相关的方法!
  */
 @property (nonatomic,assign)id<HarryViewControllerDelegate> vcDelegate;
+
+/**
+ *  网络请求对象，单例
+ */
+@property (nonatomic, strong) HDHTTPSessionRequest *httpRequest;
 
 
 /**

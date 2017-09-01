@@ -1657,7 +1657,7 @@ static const float kAfterInteractiveMaxProgressValue    = 0.9f;
         }
         
         [self.webView.scrollView.layer removeAnimationForKey:key];
-        [anim setDelegate:self];
+//        [anim setDelegate:self];
         [self.webView.scrollView.layer addAnimation:anim forKey:key];
     }
     else {

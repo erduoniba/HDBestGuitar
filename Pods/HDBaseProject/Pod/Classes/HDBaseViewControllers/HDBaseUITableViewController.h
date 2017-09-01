@@ -27,13 +27,21 @@
 
 - (id)initWithStyle:(UITableViewStyle)style;
 
-//添加刷新追加界面
+//添加刷新追加界面arrowImage:自定义图片 idleArrowImages:普通闲置状态  pullingArrowImages:松开就可以进行刷新的状态/刷新状态
 -(void)addRefreshView;
+-(void)addRefreshViewArrowImage:(UIImage *)arrowImage;
+-(void)addRefreshViewIdleArrowImages:(NSArray <UIImage *>*)idleArrowImages pullingArrowArrowImages:(NSArray <UIImage *>*)pullingArrowImages;
 -(void)addLoadMoreView;
 
-//手动调用刷新追加方法
+//主动调用下拉刷新方法
+- (void)beginRefreshing;
+
+
+// 手动调用刷新追加方法
 - (void)refresh;
-- (void)loadMore;
+
+// 当没有更多数据的时候，需要隐藏加载更多的界面
+- (void)closeMoreRefreshView;
 
 
 /**
@@ -43,7 +51,6 @@
 
 /**
  *  是否有更多
- *
  */
 -(BOOL)hasMore;
 

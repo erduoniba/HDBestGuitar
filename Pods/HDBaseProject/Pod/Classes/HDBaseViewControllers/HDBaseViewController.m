@@ -12,6 +12,8 @@
 
 #import "HDGlobalMethods.h"
 
+#import "HDHTTPSessionRequest.h"
+
 
 @interface HDBaseViewController () <UIGestureRecognizerDelegate>
 
@@ -71,6 +73,13 @@ static NSString *backImageName;
 - (AppDelegate *)getAppDelegate{
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     return appDelegate;
+}
+
+- (HDHTTPSessionRequest *)httpRequest{
+	if (!_httpRequest) {
+		_httpRequest = [HDHTTPSessionRequest shareInstance];
+	}
+	return _httpRequest;
 }
 
 - (BOOL )gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{

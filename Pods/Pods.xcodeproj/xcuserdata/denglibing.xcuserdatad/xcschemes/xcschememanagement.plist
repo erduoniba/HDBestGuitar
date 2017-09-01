@@ -9,12 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>HDBaseProject-HDBaseProject.xcscheme</key>
+		<key>HDBaseProject.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>HDBaseProject.xcscheme</key>
+		<key>HDDNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PINCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-HDBestGuitar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,32 +57,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1ED8BE8BD6A53853974A60E1AC8B1019</key>
+		<key>1BC81DB719E79BD6DBED4350E1C445B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5A669DE958A3C0410C5D691CC43AC3C4</key>
+		<key>207404CA5DC0882A5AC506E8D4258801</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D3CD435C32FE7FC8AB4649BCEE8F109</key>
+		<key>41FA54D12162DAD51D02FC58A2CD5034</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6B028B4D2B21C0F15AED557FEA821B8D</key>
+		<key>7E376424F7132FFEAA1C477C8A8FB2D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6B1714E816AE794962516E2ECBB40A5A</key>
+		<key>8BF916F96F50CD4D1244798357FEBD10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AFEAD377E81764B699FA3E5640465D36</key>
+		<key>9F8BE0BD1E5B49B2396C54A48CF4F02C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A41585CF7F2962878CA189C76683C943</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,7 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C1057D00A06301EF5B455F94F6F18552</key>
+		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

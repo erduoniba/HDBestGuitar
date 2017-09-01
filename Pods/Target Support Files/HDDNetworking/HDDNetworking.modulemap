@@ -1,0 +1,6 @@
+framework module HDDNetworking {
+  umbrella header "HDDNetworking-umbrella.h"
+
+  export *
+  module * { export * }
+}

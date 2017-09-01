@@ -157,4 +157,18 @@
     cellReuseID = cellName;
     return cellReuseID;
 }
+
+///< 创建一个cell
+- (UITableViewCell *)cellForIndexPath:(NSIndexPath *)indexPath cellClass:(Class)cellCalss{
+	UITableViewCell *cell = nil;
+	if ([cellCalss isSubclassOfClass:UITableViewCell.class]) {
+		id cell = [self dequeueReusableCellWithIdentifier:NSStringFromClass(cellCalss)];
+		if (!cell) {
+			[self registerCellName:NSStringFromClass(cellCalss)];
+			cell = [self dequeueReusableCellWithIdentifier:NSStringFromClass(cellCalss) forIndexPath:indexPath];
+		}
+	}
+	return cell;
+}
+
 @end

@@ -99,18 +99,43 @@
 
 
 -(void)addRefreshView{
+    [self addRefreshViewArrowImage:nil];
+}
+
+-(void)addRefreshViewArrowImage:(UIImage *)arrowImage{
     __weak typeof(self) weakSelf = self;
     // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf refresh];
     }];
     
+    if (arrowImage) {
+        [(MJRefreshNormalHeader *)self.tableView.mj_header arrowView].image = arrowImage;
+    }
+    
     // 马上进入刷新状态
     [self.tableView.mj_header beginRefreshing];
 }
 
+-(void)addRefreshViewIdleArrowImages:(NSArray <UIImage *>*)idleArrowImages pullingArrowArrowImages:(NSArray <UIImage *>*)pullingArrowImages{
+    __weak typeof(self) weakSelf = self;
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+
+    if (idleArrowImages && pullingArrowImages) {
+        self.tableView.mj_header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
+            [weakSelf refresh];
+        }];
+        
+        [(MJRefreshGifHeader *)self.tableView.mj_header setImages:idleArrowImages forState:MJRefreshStateIdle];
+        [(MJRefreshGifHeader *)self.tableView.mj_header setImages:pullingArrowImages forState:MJRefreshStatePulling];
+        [(MJRefreshGifHeader *)self.tableView.mj_header setImages:pullingArrowImages forState:MJRefreshStateRefreshing];
+    }
+        
+    // 马上进入刷新状态
+//    [self.tableView.mj_header beginRefreshing];
+}
+
 -(void)addLoadMoreView{
-    
     // 添加默认的上拉刷新
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadMoreData方法）
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
@@ -120,6 +145,11 @@
     
     // 设置footer
     self.tableView.mj_footer = footer;
+}
+
+
+- (void)beginRefreshing{
+	[self.tableView.mj_header beginRefreshing];
 }
 
 /**
@@ -258,7 +288,9 @@
     //子类实现
 }
 
-
+- (void)closeMoreRefreshView{
+    [self.tableView.mj_footer endRefreshingWithNoMoreData];
+}
 
 
 #pragma mark - 键盘弹出检测

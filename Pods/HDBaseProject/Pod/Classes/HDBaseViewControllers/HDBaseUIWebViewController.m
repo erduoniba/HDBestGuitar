@@ -43,6 +43,10 @@ static NSString *backImageName;
     if(array.count > 1){
         [self setNavigationItemBack];
     }
+	
+	self.view.backgroundColor = [UIColor whiteColor];
+	self.webView.opaque = NO;
+	self.webView.backgroundColor = [UIColor clearColor];
 }
 
 //创建一个默认的后退按钮

@@ -89,4 +89,8 @@
  */
 -(NSString *)deafultCellReuseIdentifier:(NSString *)cellName;
 
+
+///< 创建一个cell
+- (UITableViewCell *)cellForIndexPath:(NSIndexPath *)indexPath cellClass:(Class)cellCalss;
+
 @end

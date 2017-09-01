@@ -7,4 +7,5 @@ target 'HDBestGuitar' do
     pod 'MBProgressHUD'
     pod 'Mantle'
     pod 'MIKMIDI'
+    pod 'HDDNetworking'
 end

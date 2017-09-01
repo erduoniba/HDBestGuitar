@@ -21,4 +21,5 @@
 
 + (void)clearAllCache;
 + (void)clearCache:(NSString *)keyword;
+
 @end
