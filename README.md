@@ -320,7 +320,7 @@ SOUND EFFECTS 声音特效
 
 吉他各弦各品的音高对应的 `MIDI` 代码：
 
-![](http://7xqhx8.com1.z0.glb.clouddn.com/guitar_midi_key.png) 
+![](https://gitee.com/harrydeng/qiniufile/raw/master/harrydeng/guitar_midi_key.png) 
 
 
 
