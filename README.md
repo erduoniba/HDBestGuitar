@@ -9,7 +9,9 @@
 [**SoundFont**](https://musescore.org/zh-hans/%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C/soundfont-%E9%9F%B3%E8%89%B2%E5%BA%93) （[**SoundFont-英文**](https://musescore.org/en/handbook/soundfont) ）音色库，MuseScore 使用一种特殊的文件格式SoundFont(音色库)来告诉MuseScore如何播放乐器的声音，一个音色库能够保存任意个数的乐器，如果你使用了不兼容通用 MIDI 标准的音色库，可能会造成保存的 Midi 文件共享给其他人后听不到某些乐器声音的情况。
 
 `FluidR3_GM.sf2` (未压缩大小 141 MB)
-下载 [Fluid-soundfont.tar.gz](http://www.musescore.org/download/fluid-soundfont.tar.gz) 
+ [下载Fluid-soundfont.tar.gz](http://www.musescore.org/download/fluid-soundfont.tar.gz) 
+
+[Github下载FluidR3Mono_GM](https://github.com/ChurchOrganist/FluidR3Mono_GM)
 
 `GeneralUser GS.sf2 ` (未压缩大小 29.8 MB)
 

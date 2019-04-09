@@ -374,7 +374,8 @@
 				TargetAttributes = {
 					045100A01D2CACF2007B1E5F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = B9FH944VTE;
+						DevelopmentTeam = HQ353LFGTA;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -651,9 +652,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: fenglong zhou (7PA27J75AS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: fenglong zhou (7PA27J75AS)";
-				DEVELOPMENT_TEAM = B9FH944VTE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = HQ353LFGTA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib",
@@ -675,10 +676,10 @@
 				INFOPLIST_FILE = HDBestGuitar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.harry.HDBestGuitar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harry.HDBestGuitar2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0380381a-fdcd-469a-aa10-4e4e245f46f5";
-				PROVISIONING_PROFILE_SPECIFIER = wildcard_dev;
+				PROVISIONING_PROFILE_SPECIFIER = "com.harry.*";
 			};
 			name = Debug;
 		};
@@ -690,8 +691,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = B9FH944VTE;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HDBestGuitar/ThridPartLib",
@@ -713,10 +714,10 @@
 				INFOPLIST_FILE = HDBestGuitar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.harry.HDBestGuitar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harry.HDBestGuitar2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "80dc88b6-91ac-4ef1-98ec-97114362988d";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: *";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
